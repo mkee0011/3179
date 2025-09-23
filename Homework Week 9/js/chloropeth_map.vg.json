@@ -1,11 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Nothern European Lanugage Speakers In Australia (2021)",
+    "title": "Northern European Language Speakers in Australia (2021)",
     "width": 800,
     "height": 400,
-    "projection": {"type": "equalEarth"},
+    "projection": {"type": "mercator"},
     "data": {
-      "url": "Hhttps://github.com/mkee0011/3179/blob/625806bbe5e629a70e108418c60002f3f596dbf3/Homework%20Week%209/js/STE_2021_AUST_GDA94.topojson",
+      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework%20Week%209/js/STE_2021_AUST_GDA94.topojson",
       "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
     },
     "transform": [
@@ -13,12 +13,13 @@
         "lookup": "properties.STE_NAME21",
         "from": {
           "data": {
-            "url": "hhttps://github.com/mkee0011/3179/blob/625806bbe5e629a70e108418c60002f3f596dbf3/Homework%20Week%209/data/language_spoken_at_home.csv"
+            "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework%20Week%209/data/language_spoken_at_home.csv"
           },
           "key": "State",
           "fields": ["Northern European Languages"]
         }
-      }
+      },
+      {"calculate": "datum['Northern European Languages'] + 0.1", "as": "Number of People"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
@@ -29,7 +30,7 @@
       },
       "tooltip": [
         {"field": "properties.STE_NAME21", "type": "nominal", "title": "State"},
-        {"field": "Number of People", "type": "quantitative"}
+        {"field": "Northern European Languages", "type": "quantitative"}
       ]
     }
   }
