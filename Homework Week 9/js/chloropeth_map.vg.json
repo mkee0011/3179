@@ -16,21 +16,23 @@
             "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework%20Week%209/data/language_spoken_at_home.csv"
           },
           "key": "State",
-          "fields": ["Northern European Languages"]
+          "fields": ["NorthernEuropeanLanguages"]
         }
       },
-      {"calculate": "datum['Northern European Languages'] + 0.1", "as": "Number of People"}
+      {"calculate": "datum.NorthernEuropeanLanguages/datum.Population * 10000", "as": "Number per 10,000 population"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
       "color": {
-        "field": "Number of People",
+        "field": "Number per 10,000 population",
         "type": "quantitative",
-        "scale": {"type": "log"}
+        "scale": {
+            "type": "linear"
+        }
       },
       "tooltip": [
         {"field": "properties.STE_NAME21", "type": "nominal", "title": "State"},
-        {"field": "Northern European Languages", "type": "quantitative"}
+        {"field": "Number per 10,000 population", "type": "quantitative"}
       ]
     }
   }
