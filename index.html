@@ -8,7 +8,7 @@
 <body>
   <div id="vis"/>
   <script>
-    fetch("/Homework Week 9/js/chloropeth_map.vg.json").then(response => response.json()).then(spec => {
+    fetch("./Homework Week 9/js/chloropeth_map.vg.json").then(response => response.json()).then(spec => {
         vegaEmbed("#vis", spec, {mode: "vega-lite"})
         .then(console.log)
         .catch(console.warn);
