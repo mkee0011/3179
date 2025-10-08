@@ -1,108 +1,141 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "The Top 6 Languages Spoken in Australia by State",
     "width": 800,
     "height": 600,
-    "title": "COVID-19 Cases per Country (13 Oct 2020)",
+    "description": "Stacked bar chart showing number of speakers per language, segmented by state.",
     "data": {
-      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_10/data/top6lanp_bystate.csv"
+        "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_10/data/top6lanp_bystate.csv"
     },
-    "encoding": {
-      "x": {
-        "field": "State",
-        "type": "nominal",
-        "title": "State Name",
-        "axis": {"tickCount": 8}
-      },
-      "y": {
-        "field": "Deaths",
-        "type": "quantitative",
-        "axis": {"tickCount": 6},
-        "scale": {"type": "log", "domain": [1, 1000000]}
-      }
-    },
-    "layer": [
-      {
-        "mark": "circle",
-        "encoding": {
-          "size": {
-            "field": "Population",
-            "type": "quantitative",
-            "scale": {
-              "type": "threshold",
-              "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
-              "range": [10, 50, 150, 200, 300, 400]
-            },
-            "legend": {"format": ".1s"}
-          },
-          "color": {
-            "field": "Continent",
-            "type": "nominal",
-            "scale": {
-              "domain": [
-                "North America",
-                "South America",
-                "Europe",
-                "Africa",
-                "Asia",
-                "Oceania"
-              ],
-              "range": [
-                "#e41a1c",
-                "#984ea3",
-                "#ff7f00",
-                "#a6cee3",
-                "#377eb8",
-                "#a65628"
-              ]
+    "params":[
+        {
+            "name":"speakers_above",
+            "value":0,
+            "bind": {
+                "input":"range",
+                "min":0,
+                "max":270000,
+                "step": 10000,
+                "name": "Minimum Number of Speakers: "
             }
-          },
-          "opacity": {"value": 0.6},
-          "tooltip": [
-            {"field": "Country", "type": "nominal"},
-            {"field": "Confirmed", "type": "quantitative", "format": ","},
-            {"field": "Active", "type": "quantitative", "format": ","},
-            {"field": "Deaths", "type": "quantitative", "format": ","},
-            {"field": "Recovered", "type": "quantitative", "format": ","},
-            {
-              "field": "Cases per 10,000 Population",
-              "type": "quantitative",
-              "format": ".2f"
-            }
-          ]
-        }
-      },
-      {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "baseline": "middle",
-          "dx": -12,
-          "fontSize": 11.5,
-          "fontStyle": "italic"
         },
-        "encoding": {
-          "text": {"field": "Country", "type": "nominal"},
-          "color": {"value": "black"},
-          "opacity": {
-            "condition": {
-              "test": "datum['Country'] == 'China' || datum['Country'] == 'Singapore' || datum['Country'] == 'Australia' || datum['Country'] == 'New Zealand' || datum['Country'] == 'Italy' || datum['Country'] == 'Yemen' ||  datum['Country'] == 'United States'",
-              "value": 1
-            },
-            "value": 0
-          },
-          "tooltip": [
-            {"field": "Country", "type": "nominal"},
-            {"field": "Confirmed", "type": "quantitative", "format": ","},
-            {"field": "Active", "type": "quantitative", "format": ","},
-            {"field": "Deaths", "type": "quantitative", "format": ","},
-            {"field": "Recovered", "type": "quantitative", "format": ","},
-            {
-              "field": "Cases per 10,000 Population",
-              "type": "quantitative",
-              "format": ".2f"
+        {
+            "name":"state_select",
+            "bind":{
+                "input":"select",
+                "options":[
+                    null,
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "Australian Capital Territory",
+                    "Northern Territory",
+                    "Tasmania",
+                    "Western Australia",
+                    "South Australia"
+                ],
+                "labels":[
+                    "Show All",
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "Australian Capital Territory",
+                    "Northern Territory",
+                    "Tasmania",
+                    "Western Australia",
+                    "South Australia"
+                ],
+                "name": "State: "
             }
-          ]
         }
-      }
+    ],
+    "transform": [
+        {"filter":"datum.Speakers > speakers_above"},
+        {"filter":"!state_select||datum.State == state_select"}
+    ],
+    "layer":[
+        {
+            "mark":"bar",
+            "encoding": {
+                "x": {
+                    "field": "Language",
+                    "type": "nominal",
+                    "axis": {"title": "Language", "labelAngle": -45},
+                    "sort": "ascending"
+                },
+                "y": {
+                    "field": "Speakers",
+                    "type": "quantitative",
+                    "axis": {"title": "Number of Speakers"}
+                },
+            "color": {
+                "field": "State",
+                "type": "nominal",
+                "scale":{
+                "domain":[
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "Australian Capital Territory",
+                    "Northern Territory",
+                    "Tasmania",
+                    "Western Australia",
+                    "South Australia"
+                ],
+                "range":[
+                    "#8dd3c7",
+                    "#bebada",
+                    "#ffffb3",
+                    "#fb8072",
+                    "#80b1d3",
+                    "#fdb462",
+                    "#b3de69",
+                    "#fccde5"
+                ]
+            }
+        },
+        "tooltip":[
+            {"field":"State", "type": "nominal"},
+            {"field":"Speakers","type": "quantitative","title":"Number of Speakers"}
+        ]
+        }
+        },
+        {
+            "mark":{
+                "type":"text",
+                "align":"center",
+                "baseline":"middle",
+                "dx":-1,
+                "fontSize":11.5,
+                "fontStyle":"italic"
+
+            },
+            "encoding": {
+                "x": {
+                    "field": "Language",
+                    "type": "nominal",
+                    "axis": {"title": "Language", "labelAngle": -45},
+                    "sort": "ascending"
+                },
+                "y": {
+                    "field": "Speakers",
+                    "type": "quantitative",
+                    "axis": {"title": "Number of Speakers"}
+                },
+                "text":{"field":"Language","type":"nominal"},
+                "color":{"value":"black"},
+                "opacity":{
+                    "condition":{
+                        "test":"datum.State == 'New South Wales' && datum.Language == 'Mandarin'",
+                        "value":1
+                    },
+                    "value":0
+                },
+                "tooltip":[
+                    {"field":"State", "type": "nominal"},
+                    {"field":"Speakers","type": "quantitative","title":"Number of Speakers"}
+                ]
+            }
+        }
     ]
-  }
+}
