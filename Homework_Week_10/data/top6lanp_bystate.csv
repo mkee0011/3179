@@ -1,9 +1,49 @@
-﻿LANP,Greek,Punjabi,Vietnamese,Cantonese,Mandarin,Arabic
-New South Wales,78691,53460,117907,148943,270685,227243
-Victoria,107158,104949,118801,82432,221798,91441
-Queensland,10475,30873,31370,27437,83607,16171
-Australian Capital Territory,2527,5019,5028,4230,14397,3867
-Northern Territory,3258,1563,1565,803,2526,427
-Tasmania,1126,2556,1467,1536,8129,972
-Western Australia,4520,20613,22763,19683,51751,16000
-South Australia,21882,20004,21855,10166,32133,11033
+State,Language,Speakers
+New South Wales,Greek,78691
+Victoria,Greek,107158
+Queensland,Greek,10475
+Australian Capital Territory,Greek,2527
+Northern Territory,Greek,3258
+Tasmania,Greek,1126
+Western Australia,Greek,4520
+South Australia,Greek,21882
+New South Wales,Punjabi,53460
+Victoria,Punjabi,104949
+Queensland,Punjabi,30873
+Australian Capital Territory,Punjabi,5019
+Northern Territory,Punjabi,1563
+Tasmania,Punjabi,2556
+Western Australia,Punjabi,20613
+South Australia,Punjabi,20004
+New South Wales,Vietnamese,117907
+Victoria,Vietnamese,118801
+Queensland,Vietnamese,31370
+Australian Capital Territory,Vietnamese,5028
+Northern Territory,Vietnamese,1565
+Tasmania,Vietnamese,1467
+Western Australia,Vietnamese,22763
+South Australia,Vietnamese,21855
+New South Wales,Cantonese,148943
+Victoria,Cantonese,82432
+Queensland,Cantonese,27437
+Australian Capital Territory,Cantonese,4230
+Northern Territory,Cantonese,803
+Tasmania,Cantonese,1536
+Western Australia,Cantonese,19683
+South Australia,Cantonese,10166
+New South Wales,Mandarin,270685
+Victoria,Mandarin,221798
+Queensland,Mandarin,83607
+Australian Capital Territory,Mandarin,14397
+Northern Territory,Mandarin,2526
+Tasmania,Mandarin,8129
+Western Australia,Mandarin,51751
+South Australia,Mandarin,32133
+New South Wales,Arabic,227243
+Victoria,Arabic,91441
+Queensland,Arabic,16171
+Australian Capital Territory,Arabic,3867
+Northern Territory,Arabic,427
+Tasmania,Arabic,972
+Western Australia,Arabic,16000
+South Australia,Arabic,11033
