@@ -2,7 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height":450,
     "width":"container",
-    "title": "Northern European Language Speakers in Australia (2021)",
+    "background":"white",
+    "title": "Mandarin Speakers in Australia (2021)",
     "projection": {"type": "mercator"},
     "data": {
       "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_9/js/STE_2021_AUST_GDA94.topojson",
@@ -13,13 +14,13 @@
             "lookup": "properties.STE_NAME21",
             "from": {
                 "data": {
-                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_9/data/language_spoken_at_home.csv"
+                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_10/data/mandarin_speaker_bystate.csv"
                 },
                 "key": "State",
-                "fields": ["NorthernEuropeanLanguages", "Population"]
+                "fields": ["Mandarin", "Population"]
             }
         },
-        {"calculate": "datum.NorthernEuropeanLanguages/datum.Population * 10000", "as": "Numberper10000"}
+        {"calculate": "datum.Mandarin/datum.Population * 10000", "as": "Numberper10000"}
     ],
     "mark": {"type": "geoshape","stroke":"white"},
     "encoding": {
@@ -28,7 +29,7 @@
             "type": "quantitative",
             "scale": {
                 "type": "threshold",
-                "domain": [6000,7000,8000],
+                "domain": [150,200,250],
                 "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
             },
             "legend":{"title":"Speakers per 10,000"}

@@ -2,7 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height":450,
     "width":"container",
-    "title": "The Top 6 Languages Spoken in Australia by State",
+    "background":"white",
+    "title": "The Top 6 Languages (beind English) Spoken in Australia by State",
     "description": "Stacked bar chart showing number of speakers per language, segmented by state.",
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_10/data/top6lanp_bystate.csv"
@@ -101,11 +102,18 @@
         }
         },
         {
+            "transform": [
+                {"aggregate": [{
+                    "op": "sum",
+                    "field":"Speakers",
+                    "as":"Total"
+                }],"groupby": ["Language"]
+                }
+            ],
             "mark":{
                 "type":"text",
                 "align":"center",
-                "baseline":"middle",
-                "dx":-1,
+                "baseline":"bottom",
                 "fontSize":11.5,
                 "fontStyle":"italic"
 
@@ -118,22 +126,15 @@
                     "sort": "ascending"
                 },
                 "y": {
-                    "field": "Speakers",
+                    "field": "Total",
                     "type": "quantitative",
                     "axis": {"title": "Number of Speakers"}
                 },
-                "text":{"field":"Language","type":"nominal"},
+                "text":{"field":"Total","type":"quantitative"},
                 "color":{"value":"black"},
-                "opacity":{
-                    "condition":{
-                        "test":"datum.State == 'New South Wales' && datum.Language == 'Mandarin'",
-                        "value":1
-                    },
-                    "value":0
-                },
                 "tooltip":[
-                    {"field":"State", "type": "nominal"},
-                    {"field":"Speakers","type": "quantitative","title":"Number of Speakers"}
+                    {"field":"Language", "type": "nominal"},
+                    {"field":"Total","type": "quantitative","title":"Number of Speakers"}
                 ]
             }
         }
