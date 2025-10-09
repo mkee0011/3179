@@ -134,7 +134,7 @@
                 "color":{"value":"black"},
                 "tooltip":[
                     {"field":"Language", "type": "nominal"},
-                    {"field":"Total","type": "quantitative","title":"Number of Speakers"}
+                    {"field":"Total","type": "quantitative","title":"Total Number of Speakers"}
                 ]
             }
         }

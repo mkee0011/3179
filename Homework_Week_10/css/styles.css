@@ -1,20 +1,39 @@
-#vis_title{
-    font-family: 'Tahoma', serif;
-    font-size:35px;
-    color: "black";
-    text-align: center;
-    margin-top: 25px;
-}  
-
-#stackedbar_chart,#chloropeth_map{
-	flex:1 1 45%;
-    min-width: 500px;
+body *{
+    font-family: 'Open Sans', sans-serif;
 }
 
-#vega-container {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    width: 100vw;
-    box-sizing:border-box;
-  }
+h1 {
+    font-weight: 900;
+    text-align: center;
+    margin-top: 0px;
+}
+
+p {
+    text-align: center;
+}
+body {
+    background-color: #f7f7f7;
+}
+
+.page {
+    width: 1000px;
+    background-color: #f7f7f7;
+    margin: auto;
+    padding: 20px;
+    padding-top: 35px;
+}
+
+.vis-container {
+    width: 100%;
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+}
+
+.pure-g {
+    margin-bottom: 40px;
+}
+
+.small-font {
+    font-size: 14px;
+}
