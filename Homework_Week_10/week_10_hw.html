@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>FIT3189 Homework Week 10 Assignment</title>
+    <title>FIT3179 Homework Week 10</title>
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -11,17 +11,23 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
   
 </head>
-<body>
-  
-<div id="stackedbar_chart"></div>
+<body style="background-color: #ECECEC;">
+    <h1 id="vis_title">Linguistic Diversity in Australia</h1>
 
-<script type="text/javascript">
+    <div id="vega-container"> 
+        <div id="stackedbar_chart"></div>
+        <div id="chloropeth_map"></div>
+    </div>
 
-    var spec2 = "js/stackedbar_chart.vg.json";
-    vegaEmbed('#stackedbar_chart', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-</script>
+    <script>
+        var spec1 = "js/stacked_bar_chart.vg.json";
+        vegaEmbed('#stackedbar_chart', spec1).then(function(result) {
+        }).catch(console.error);
+
+        var spec2 =  "js/chloropeth_map_2.vg.json"       
+        vegaEmbed('#chloropeth_map', spec2).then(function(result) {
+        }).catch(console.error);
+    </script>
 
 </body>
 </html>

@@ -1,8 +1,20 @@
-#stackedbar_chart{
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
+#vis_title{
+    font-family: 'Tahoma', serif;
+    font-size:35px;
+    color: "black";
+    text-align: center;
+    margin-top: 25px;
+}  
+
+#stackedbar_chart,#chloropeth_map{
+	flex:1 1 45%;
+    min-width: 500px;
 }
+
+#vega-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100vw;
+    box-sizing:border-box;
+  }

@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height":450,
+    "width":"container",
     "title": "The Top 6 Languages Spoken in Australia by State",
-    "width": 800,
-    "height": 600,
     "description": "Stacked bar chart showing number of speakers per language, segmented by state.",
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_10/data/top6lanp_bystate.csv"
