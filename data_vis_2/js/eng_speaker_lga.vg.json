@@ -6,25 +6,25 @@
     "projection": {"type": "mercator"},
     "data": {
       "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/js/Local_Government_Area.topojson",
-      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+      "format": {"type": "topojson", "feature": "lga_aus"}
     },
     "transform": [
         {
-            "lookup": "properties.STE_NAME21",
+            "lookup": "properties.lga_name",
             "from": {
                 "data": {
-                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_9/data/language_spoken_at_home.csv"
+                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/dara_vis_2/data/eng_lanp_by_lga.csv"
                 },
-                "key": "State",
-                "fields": ["NorthernEuropeanLanguages", "Population"]
+                "key": "LGA",
+                "fields": ["English", "pop"]
             }
         },
-        {"calculate": "datum.NorthernEuropeanLanguages/datum.Population * 10000", "as": "Numberper10000"}
+        {"calculate": "datum.English/datum.pop * 100", "as": "prop_of_state"}
     ],
     "mark": {"type": "geoshape","stroke":"white"},
     "encoding": {
         "color": {
-            "field": "Numberper10000",
+            "field": "prop_of_state",
             "type": "quantitative",
             "scale": {
                 "type": "threshold",
