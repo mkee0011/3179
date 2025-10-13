@@ -3,31 +3,44 @@
     "height":450,
     "width":600,
     "background":"white",
-    "title": "The Top 6 Languages (beind English) Spoken in Australia by State",
+    "title": "English Proficiency Levels by State",
     "description": "Stacked bar chart showing number of speakers per language, segmented by state.",
     "data": {
-        "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/data/eng_prof_by_state.csv"
+        "url": "https://raw.githubusercontent.com/mkee0011/3179/refs/heads/main/data_vis_2/data/eng_prof_by_state.csv"
     },
     "transform": [
-        {"calculate": "datum.speakers/datum.state_pop*100","as":"prop_of_pop"}
+        {"calculate": "datum.speakers/datum.state_pop*100","as":"prop_of_pop"},
+        {"calculate": "datum.proficiency == 'speak_eng_only' ? 'English Only' : datum.proficiency == 'other_lang_and_speaks_English_Not_at_all' ? 'English Not At All' : datum.proficiency == 'other_lang_and_speaks_English_Not_well' ? 'English Not Well' : datum.proficiency == 'other_lang_andspeaks_English_Well' ? 'English Well' : datum.proficiency == 'other_lang_and_speaks_English_Very_well' ? 'English Very Well' : datum.proficiency",
+            "as": "proficiency_label"}   
     ],
     "mark":{
         "type": "point",
-        "filled": true
+        "filled": true,
+        "size":100
     },
     "encoding": {
         "x":{
             "field":"state",
-            "type":"nominal"
+            "type":"nominal",
+            "axis":{
+                "title":"State",
+                "labelAngle":45}
         },
         "y":{
             "field":"prop_of_pop",
-            "type":"quantitative"
+            "type":"quantitative",
+            "axis":{"title":"Proportion of State"}
         },
         "color":{
-            "field":"proficiency",
+            "field":"proficiency_label",
             "type":"nominal",
-            "legend":{"title": "Proficiency Level"}
-        }
+            "legend":{"title": "Proficiency Level"},
+            "sort":["English Only","English Not At All","English Not Well","English Well","English Very Well"]
+        },
+        "tooltip": [
+            {"field": "state", "type": "nominal", "title": "State"},
+            {"field":"proficiency_label","type":"nominal","title":"English Proficiency Level"},
+            {"field": "prop_of_pop", "type": "quantitative", "format":".1f","title":"Proportion of State Population"}
+            ]
     }
 }
