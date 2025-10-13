@@ -1,25 +1,25 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Northern European Language Speakers in Australia (2021)",
+    "title": "Proportion of StE",
     "width": 800,
     "height": 400,
     "projection": {"type": "mercator"},
     "data": {
-      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/js/Local_Government_Area.topojson",
-      "format": {"type": "topojson", "feature": "lga_aus"}
+      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_9/js/STE_2021_AUST_GDA94.topojson",
+      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
     },
     "transform": [
         {
-            "lookup": "properties.lga_name",
+            "lookup": "properties.STE_NAME21",
             "from": {
                 "data": {
-                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/dara_vis_2/data/eng_lanp_by_lga.csv"
+                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/data/eng_prof_by_state.csv"
                 },
-                "key": "LGA",
-                "fields": ["English", "pop"]
+                "key": "state",
+                "fields": ["speak_eng_only","state_pop"]
             }
         },
-        {"calculate": "datum.English/datum.pop * 100", "as": "prop_of_state"}
+        {"calculate": "datum.speak_eng_only/datum.state_pop * 100", "as": "prop_of_state"}
     ],
     "mark": {"type": "geoshape","stroke":"white"},
     "encoding": {
@@ -28,14 +28,14 @@
             "type": "quantitative",
             "scale": {
                 "type": "threshold",
-                "domain": [6000,7000,8000],
+                "domain": [55,70,85],
                 "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
             },
-            "legend":{"title":"Speakers per 10,000"}
+            "legend":{"title":"% of State"}
         },
-      "tooltip": [
+        "tooltip": [
         {"field": "properties.STE_NAME21", "type": "nominal", "title": "State"},
-        {"field": "Numberper10000", "type": "quantitative", "format":".0f","title":"Speakers per 10,000"}
+        {"field": "prop_of_state", "type": "quantitative", "format":".1f","title":"Proportion of State Population"}
         ]
     }
 }
