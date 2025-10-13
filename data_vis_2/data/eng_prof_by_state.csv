@@ -1,10 +1,41 @@
-﻿state,speak_eng_only,other_lang_and_speaks_English_Not_at_all,other_lang_and_speaks_English_Not_well,other_lang_andspeaks_English_Well,other_lang_and_speaks_English_Very_well,state_pop
-New South Wales,5457982,90401,271286,543012,1262630,8072163
-Australian Capital Territory,323854,3000,8339,27105,74137,454499
-Northern Territory,133262,2050,7019,25222,41711,232605
-Tasmania,479875,1523,3567,14849,29824,557571
-Victoria,4369804,69334,216541,456134,1065392,6503491
-Queensland,4151206,22453,68398,185116,420088,5156138
-South Australia,1382951,11923,35899,86093,187402,1781516
-Western Australia,2002771,14817,45298,131117,306272,2660026
-Total,18301707,215498,656357,1468641,3387451,25418009
+state,proficiency,speakers,state_pop
+New South Wales,speak_eng_only,5457982,8072163
+Australian Capital Territory,speak_eng_only,323854,454499
+Northern Territory,speak_eng_only,133262,232605
+Tasmania,speak_eng_only,479875,557571
+Victoria,speak_eng_only,4369804,6503491
+Queensland,speak_eng_only,4151206,5156138
+South Australia,speak_eng_only,1382951,1781516
+Western Australia,speak_eng_only,2002771,2660026
+New South Wales,other_lang_and_speaks_English_Not_at_all,90401,8072163
+Australian Capital Territory,other_lang_and_speaks_English_Not_at_all,3000,454499
+Northern Territory,other_lang_and_speaks_English_Not_at_all,2050,232605
+Tasmania,other_lang_and_speaks_English_Not_at_all,1523,557571
+Victoria,other_lang_and_speaks_English_Not_at_all,69334,6503491
+Queensland,other_lang_and_speaks_English_Not_at_all,22453,5156138
+South Australia,other_lang_and_speaks_English_Not_at_all,11923,1781516
+Western Australia,other_lang_and_speaks_English_Not_at_all,14817,2660026
+New South Wales,other_lang_and_speaks_English_Not_well,271286,8072163
+Australian Capital Territory,other_lang_and_speaks_English_Not_well,8339,454499
+Northern Territory,other_lang_and_speaks_English_Not_well,7019,232605
+Tasmania,other_lang_and_speaks_English_Not_well,3567,557571
+Victoria,other_lang_and_speaks_English_Not_well,216541,6503491
+Queensland,other_lang_and_speaks_English_Not_well,68398,5156138
+South Australia,other_lang_and_speaks_English_Not_well,35899,1781516
+Western Australia,other_lang_and_speaks_English_Not_well,45298,2660026
+New South Wales,other_lang_andspeaks_English_Well,543012,8072163
+Australian Capital Territory,other_lang_andspeaks_English_Well,27105,454499
+Northern Territory,other_lang_andspeaks_English_Well,25222,232605
+Tasmania,other_lang_andspeaks_English_Well,14849,557571
+Victoria,other_lang_andspeaks_English_Well,456134,6503491
+Queensland,other_lang_andspeaks_English_Well,185116,5156138
+South Australia,other_lang_andspeaks_English_Well,86093,1781516
+Western Australia,other_lang_andspeaks_English_Well,131117,2660026
+New South Wales,other_lang_and_speaks_English_Very_well,1262630,8072163
+Australian Capital Territory,other_lang_and_speaks_English_Very_well,74137,454499
+Northern Territory,other_lang_and_speaks_English_Very_well,41711,232605
+Tasmania,other_lang_and_speaks_English_Very_well,29824,557571
+Victoria,other_lang_and_speaks_English_Very_well,1065392,6503491
+Queensland,other_lang_and_speaks_English_Very_well,420088,5156138
+South Australia,other_lang_and_speaks_English_Very_well,187402,1781516
+Western Australia,other_lang_and_speaks_English_Very_well,306272,2660026

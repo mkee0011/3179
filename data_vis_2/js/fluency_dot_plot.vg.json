@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height":450,
+    "width":600,
+    "background":"white",
+    "title": "The Top 6 Languages (beind English) Spoken in Australia by State",
+    "description": "Stacked bar chart showing number of speakers per language, segmented by state.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/data/eng_prof_by_state.csv"
+    },
+    "transform": [
+        {"calculate": "datum.speakers/datum.state_pop*100","as":"prop_of_pop"}
+    ],
+    "mark":{
+        "type": "point",
+        "filled": true
+    },
+    "encoding": {
+        "x":{
+            "field":"state",
+            "type":"nominal"
+        },
+        "y":{
+            "field":"prop_of_pop",
+            "type":"quantitative"
+        },
+        "color":{
+            "field":"proficiency",
+            "type":"nominal",
+            "legend":{"title": "Proficiency Level"}
+        }
+    }
+}
