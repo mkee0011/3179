@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Proportion of StE",
+    "title": "Proportion of English Speakers in Australia (2021)",
     "width": 800,
     "height": 400,
     "projection": {"type": "mercator"},
