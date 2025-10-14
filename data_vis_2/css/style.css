@@ -1,23 +1,28 @@
 .page{
-    width: 1fr;
-    background-color: blueviolet;
+    width: 1800px;
+    background-color: lightgray;
     margin: auto;
     padding: 20px;
     padding-top: 35px;
 }
 
-h1{
+h1,h2,p{
     text-align: center;
     font-family: "Times New Roman";
 }
 
-h2{
-    text-align: center;
-    font-family: "Times New Roman";
-}
 .vis-container {
-    width: 100%;
-    border-radius: 15px;
-    background-color: green;
+    background-color: white;
+    width: 99%;
     padding: 20px;
+    border-radius: 15px;
+}
+
+
+.text-container{
+    background-color: white;
+    width: 94%;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
 }

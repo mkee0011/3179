@@ -1,25 +1,25 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Proportion of English Speakers in Australia (2021)",
-    "width": 800,
-    "height": 400,
+    "width": "container",
+    "height": 600,
     "projection": {"type": "mercator"},
     "data": {
-      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_9/js/STE_2021_AUST_GDA94.topojson",
-      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/js/Local_Government_Area-2.json",
+      "format": {"type": "topojson", "feature": "Local_Government_Area"}
     },
     "transform": [
         {
-            "lookup": "properties.STE_NAME21",
+            "lookup": "properties.abb_name",
             "from": {
                 "data": {
-                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/data/eng_prof_by_state.csv"
+                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/data/english_lanp_by_lga.csv"
                 },
-                "key": "state",
-                "fields": ["speak_eng_only","state_pop"]
+                "key": "LGA",
+                "fields": ["English","pop"]
             }
         },
-        {"calculate": "datum.speak_eng_only/datum.state_pop * 100", "as": "prop_of_state"}
+        {"calculate": "datum.English/datum.pop * 100", "as": "prop_of_state"}
     ],
     "mark": {"type": "geoshape","stroke":"white"},
     "encoding": {
@@ -34,7 +34,7 @@
             "legend":{"title":"% of State"}
         },
         "tooltip": [
-        {"field": "properties.STE_NAME21", "type": "nominal", "title": "State"},
+        {"field": "properties.lga_name", "type": "nominal", "title": "State"},
         {"field": "prop_of_state", "type": "quantitative", "format":".1f","title":"Proportion of State Population"}
         ]
     }
