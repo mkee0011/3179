@@ -1,28 +1,38 @@
 .page{
-    width: 1800px;
+    width: 1400px;
     background-color: lightgray;
     margin: auto;
     padding: 20px;
     padding-top: 35px;
 }
 
-h1,h2,p{
+.pure-g{
+    margin-bottom: 20px;
+}
+
+h1,h2,h3,p{
     text-align: center;
     font-family: "Times New Roman";
 }
 
 .vis-container {
     background-color: white;
-    width: 99%;
+    width: 98%;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 
 .text-container{
     background-color: white;
-    width: 94%;
+    width: 90%;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     margin-bottom: 15px;
+}
+
+.section_heading{
+    background-color: lightblue;
+    width: 100%;
+    border-radius: 10px;
 }
