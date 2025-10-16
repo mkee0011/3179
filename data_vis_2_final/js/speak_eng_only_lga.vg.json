@@ -1,10 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height":460,
-    "width":"container",
+    "height":500,
+    "width":600,
     "background":"white",
     "title": "English Only Speakers in Australia (2021)",
-    "projection": {"type": "mercator"},
+    "projection": {"type": "mercator", "scale":700, "center":[135,-28]},
     "data": {
       "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/js/LGA_Boundaries.topojson",
       "format": {"type": "topojson", "feature": "LGA_2021_AUST_GDA2020"}
@@ -14,7 +14,7 @@
             "lookup": "properties.LGA_NAME21",
             "from": {
                 "data": {
-                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/data/eng_only_by_state.csv"
+                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/speak_eng_only_by_lga.csv"
                 },
                 "key": "LGA",
                 "fields": ["speaks_english_only", "pop"]
