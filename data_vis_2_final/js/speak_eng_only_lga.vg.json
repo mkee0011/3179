@@ -6,21 +6,21 @@
     "title": "English Only Speakers in Australia (2021)",
     "projection": {"type": "mercator"},
     "data": {
-      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/Homework_Week_9/js/STE_2021_AUST_GDA94.topojson",
-      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/js/LGA_Boundaries.topojson",
+      "format": {"type": "topojson", "feature": "LGA_2021_AUST_GDA2020"}
     },
     "transform": [
         {
-            "lookup": "properties.STE_NAME21",
+            "lookup": "properties.LGA_NAME21",
             "from": {
                 "data": {
                     "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2/data/eng_only_by_state.csv"
                 },
-                "key": "state",
-                "fields": ["speaks_english_only", "population"]
+                "key": "LGA",
+                "fields": ["speaks_english_only", "pop"]
             }
         },
-        {"calculate": "datum.speaks_english_only/datum.population * 100", "as": "prop_of_pop"}
+        {"calculate": "datum.speaks_english_only/datum.pop * 100", "as": "prop_of_pop"}
     ],
     "mark": {"type": "geoshape","stroke":"white"},
     "encoding": {
@@ -35,7 +35,7 @@
             "legend":{"title":"Proportion of Population"}
         },
       "tooltip": [
-        {"field": "properties.STE_NAME21", "type": "nominal", "title": "State"},
+        {"field": "properties.LGA_NAME21", "type": "nominal", "title": "LGA"},
         {"field": "prop_of_pop", "type": "quantitative", "format":".0f","title":"% of Population"}
         ]
     }
