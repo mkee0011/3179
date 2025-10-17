@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height":400,
+    "width":600,
+    "background":"white",
+    "title": "English Proficiency Level Among Non-English Language Speakers by State",
+    "description": "Dot plot showing English proficiency levels of other language speakers",
+    "data": {
+        "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top_10_bystate.csv"
+    },
+    "transform": [
+        {"calculate": ""}
+    ],
+    "layer": [
+        {
+            "mark":"rule",
+            "encoding": {
+                "x":{"field":}
+            }
+        }
+    ]
+}
