@@ -3,20 +3,47 @@
     "height":400,
     "width":600,
     "background":"white",
-    "title": "English Proficiency Level Among Non-English Language Speakers by State",
-    "description": "Dot plot showing English proficiency levels of other language speakers",
+    "title": "Top 10 Languages Spoken at Home in Australia (Excluding English)",
+    "description": "Lollipop chart showing the total number of speakers for the top 10 languages in Australia (exlcuding English)",
     "data": {
-        "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top_10_bystate.csv"
+        "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top10_bystate.csv"
     },
     "transform": [
-        {"calculate": ""}
+        {"filter":"datum.State=='Total'"},
+        {
+            "fold":["Cantonese","Mandarin","Vietnamese","Arabic","Hindi","Punjabi","Nepali","Greek","Italian","Spanish"], "as":["Language","Speakers"]
+        }
     ],
     "layer": [
         {
-            "mark":"rule",
+            "mark":{
+                "type":"rule",
+                "strokeWidth":2,
+                "color":"blue"
+            },
             "encoding": {
-                "x":{"field":}
+                "x":{"field": "Language","type": "nominal","sort":"-y","axis":{"labelAngle":-45}},
+                "y":{"field":"Speakers","type": "quantitative","axis":{"title":"Numer of Speakers"}}
+            }
+        },
+        {
+            "mark":{
+                "type":"point",
+                "filled": true,
+                "size":300,
+                "color":"blue",
+                "opacity":1
+            },
+            "encoding": {
+                "x":{"field": "Language","type": "nominal","sort":"-y"},
+                "y":{"field":"Speakers","type": "quantitative"},
+                "tooltip":[
+                    {"field":"Language","type": "nominal"},
+                    {"field":"Speakers","type": "quantitative","title":"Number of Speakers"}
+                ]
+
             }
         }
     ]
 }
+
