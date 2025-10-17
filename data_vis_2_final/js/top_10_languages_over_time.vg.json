@@ -8,8 +8,61 @@
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top10_overtime.csv"
     },
-    "mark":"line",
     "encoding": {
-        "x":{"field":}
+        "x":{
+            "field":"year",
+            "type": "ordinal",
+            "axis":{"title":"Census Year","labelAngle":0}
+        },
+        "y":{
+            "field":"speakers",
+            "type": "quantitative",
+            "axis":{
+                "title":"Number of Speakers",
+                "grid":false
+            }
+        },
+        "color":{
+            "field":"language",
+            "type": "nominal",
+            "title": "Language",
+            "legend":{"orient":"right"}
+        }
+    },
+    "layer": [
+        {
+            "mark":{
+                "type":"rule",
+                "strokeWidth":1,
+                "color":"gray"
+            },
+            "transform": [
+                {"filter": {"field": "year", "oneOf": ["2011", "2016", "2021"]}}
+            ],
+            "encoding": {
+                "x": {"field": "year", "type": "ordinal"},
+                "y":{"value":0},
+                "y2":{"field":"speakers"}
+            }
+        },
+        {
+            "mark":{
+                "type":"line",
+                "strokeWidth":2
+            }
+        },
+        {
+            "mark":{
+                "type": "point",
+                "filled":true,
+                "size":80,
+                "opacity":1.0
+            }
+        }
+    ],
+    "config":{
+        "view":{
+            "stroke":null
+        }
     }
 }
