@@ -3,8 +3,11 @@
     "height":500,
     "width":600,
     "background":"white",
-    "title": "English Only Speakers in Australia (2021)",
-    "projection": {"type": "mercator", "scale":700, "center":[135,-28]},
+    "title": {
+        "text": {"expr":"'Proportion of ' + language_select + ' Speakers by State in Australia (2021)'"},
+        "fontSize":14
+    },
+    "projection": {"type": "mercator"},
     "data": {
       "url": "https://raw.githubusercontent.com/mkee0011/3179/refs/heads/main/data_vis_2_final/js/state_boundaries.topojson",
       "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
@@ -12,6 +15,7 @@
     "params": [
         {
             "name":"language_select",
+            "value":"Mandarin",
             "bind":{
                 "input":"select",
                 "options":[
@@ -42,6 +46,9 @@
             }
         }
     ],
+    "config": {
+        "legend": {"orient": "top-right"}
+    },
     "transform": [
         {
             "lookup":"properties.STE_NAME21",
@@ -64,18 +71,22 @@
                 ]   
             }
         },
-        {"calculate": "datum[language_select] / datum.Population * 100", "as": "language_prop"}
+        {"calculate": "datum[language_select] * 100", "as": "language_prop"}
     ],
     "mark":{"type": "geoshape","stroke":"white"},
     "encoding": {
         "color":{
             "field":"language_prop",
             "type": "quantitative",
+            "scale":{
+                "domain":[0,4],
+                "range":["#edf8fb","#238b45"]
+            },
             "legend":{"title":"Proportion of Population (%)"}
         },
         "tooltip":[
             {"field":"properties.STE_NAME21","type":"nominal","title":"State"},
-            {"field":"language_prop","type":"quantitative","format":".0f","title":"% of Population"}
+            {"field":"language_prop","type":"quantitative","format":".1f","title":"% of Population"}
         ]
     }
 }
