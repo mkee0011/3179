@@ -1,73 +1,73 @@
-state,category,speakers
-New South Wales,Other Languages,66176
-Victoria,Other Languages,68256
-Queensland,Other Languages,59723
-South Australia,Other Languages,13017
-Western Australia,Other Languages,29355
-Tasmania,Other Languages,2215
-Northern Territory,Other Languages,3082
-Australian Capital Territory,Other Languages,4347
-New South Wales,Australian Indigenous Languages,5494
-Victoria,Australian Indigenous Languages,1143
-Queensland,Australian Indigenous Languages,19498
-South Australia,Australian Indigenous Languages,4450
-Western Australia,Australian Indigenous Languages,11493
-Tasmania,Australian Indigenous Languages,194
-Northern Territory,Australian Indigenous Languages,36077
-Australian Capital Territory,Australian Indigenous Languages,294
-New South Wales,Eastern Asian Languages,520733
-Victoria,Eastern Asian Languages,350181
-Queensland,Eastern Asian Languages,155238
-South Australia,Eastern Asian Languages,50072
-Western Australia,Eastern Asian Languages,88683
-Tasmania,Eastern Asian Languages,11151
-Northern Territory,Eastern Asian Languages,4572
-Australian Capital Territory,Eastern Asian Languages,23505
-New South Wales,Southeast Asian Languages,297502
-Victoria,Southeast Asian Languages,258275
-Queensland,Southeast Asian Languages,100141
-South Australia,Southeast Asian Languages,48134
-Western Australia,Southeast Asian Languages,93470
-Tasmania,Southeast Asian Languages,5019
-Northern Territory,Southeast Asian Languages,10560
-Australian Capital Territory,Southeast Asian Languages,14114
-New South Wales,Southern Asian Languages,432134
-Victoria,Southern Asian Languages,425308
-Queensland,Southern Asian Languages,126876
-South Australia,Southern Asian Languages,72466
-Western Australia,Southern Asian Languages,95656
-Tasmania,Southern Asian Languages,16871
-Northern Territory,Southern Asian Languages,11454
-Australian Capital Territory,Southern Asian Languages,36784
-New South Wales,Southwest and Central Asian Languages,353154
-Victoria,Southwest and Central Asian Languages,218515
-Queensland,Southwest and Central Asian Languages,38336
-South Australia,Southwest and Central Asian Languages,30963
-Western Australia,Southwest and Central Asian Languages,35045
-Tasmania,Southwest and Central Asian Languages,2112
-Northern Territory,Southwest and Central Asian Languages,706
-Australian Capital Territory,Southwest and Central Asian Languages,7029
-New South Wales,Eastern European Languages,129977
-Victoria,Eastern European Languages,133055
-Queensland,Eastern European Languages,39001
-South Australia,Eastern European Languages,24172
-Western Australia,Eastern European Languages,35149
-Tasmania,Eastern European Languages,2004
-Northern Territory,Eastern European Languages,625
-Australian Capital Territory,Eastern European Languages,7458
-New South Wales,Southern European Languages,279221
-Victoria,Southern European Languages,284563
-Queensland,Southern European Languages,86890
-South Australia,Southern European Languages,59128
-Western Australia,Southern European Languages,61268
-Tasmania,Southern European Languages,5003
-Northern Territory,Southern European Languages,5916
-Australian Capital Territory,Southern European Languages,12877
-New South Wales,Northern European Languages,5504147
-Victoria,Northern European Languages,4406339
-Queensland,Northern European Languages,4195004
-South Australia,Northern European Languages,1394691
-Western Australia,Northern European Languages,2034655
-Tasmania,Northern European Languages,483224
-Northern Territory,Northern European Languages,134717
-Australian Capital Territory,Northern European Languages,327823
+state,category,speakers,state_pop
+New South Wales,Other Languages,66176,8072163
+Victoria,Other Languages,68256,6503491
+Queensland,Other Languages,59723,5156138
+South Australia,Other Languages,13017,1781516
+Western Australia,Other Languages,29355,2660026
+Tasmania,Other Languages,2215,557571
+Northern Territory,Other Languages,3082,232605
+Australian Capital Territory,Other Languages,4347,454499
+New South Wales,Australian Indigenous Languages,5494,8072163
+Victoria,Australian Indigenous Languages,1143,6503491
+Queensland,Australian Indigenous Languages,19498,5156138
+South Australia,Australian Indigenous Languages,4450,1781516
+Western Australia,Australian Indigenous Languages,11493,2660026
+Tasmania,Australian Indigenous Languages,194,557571
+Northern Territory,Australian Indigenous Languages,36077,232605
+Australian Capital Territory,Australian Indigenous Languages,294,454499
+New South Wales,Eastern Asian Languages,520733,8072163
+Victoria,Eastern Asian Languages,350181,6503491
+Queensland,Eastern Asian Languages,155238,5156138
+South Australia,Eastern Asian Languages,50072,1781516
+Western Australia,Eastern Asian Languages,88683,2660026
+Tasmania,Eastern Asian Languages,11151,557571
+Northern Territory,Eastern Asian Languages,4572,232605
+Australian Capital Territory,Eastern Asian Languages,23505,454499
+New South Wales,Southeast Asian Languages,297502,8072163
+Victoria,Southeast Asian Languages,258275,6503491
+Queensland,Southeast Asian Languages,100141,5156138
+South Australia,Southeast Asian Languages,48134,1781516
+Western Australia,Southeast Asian Languages,93470,2660026
+Tasmania,Southeast Asian Languages,5019,557571
+Northern Territory,Southeast Asian Languages,10560,232605
+Australian Capital Territory,Southeast Asian Languages,14114,454499
+New South Wales,Southern Asian Languages,432134,8072163
+Victoria,Southern Asian Languages,425308,6503491
+Queensland,Southern Asian Languages,126876,5156138
+South Australia,Southern Asian Languages,72466,1781516
+Western Australia,Southern Asian Languages,95656,2660026
+Tasmania,Southern Asian Languages,16871,557571
+Northern Territory,Southern Asian Languages,11454,232605
+Australian Capital Territory,Southern Asian Languages,36784,454499
+New South Wales,Southwest and Central Asian Languages,353154,8072163
+Victoria,Southwest and Central Asian Languages,218515,6503491
+Queensland,Southwest and Central Asian Languages,38336,5156138
+South Australia,Southwest and Central Asian Languages,30963,1781516
+Western Australia,Southwest and Central Asian Languages,35045,2660026
+Tasmania,Southwest and Central Asian Languages,2112,557571
+Northern Territory,Southwest and Central Asian Languages,706,232605
+Australian Capital Territory,Southwest and Central Asian Languages,7029,454499
+New South Wales,Eastern European Languages,129977,8072163
+Victoria,Eastern European Languages,133055,6503491
+Queensland,Eastern European Languages,39001,5156138
+South Australia,Eastern European Languages,24172,1781516
+Western Australia,Eastern European Languages,35149,2660026
+Tasmania,Eastern European Languages,2004,557571
+Northern Territory,Eastern European Languages,625,232605
+Australian Capital Territory,Eastern European Languages,7458,454499
+New South Wales,Southern European Languages,279221,8072163
+Victoria,Southern European Languages,284563,6503491
+Queensland,Southern European Languages,86890,5156138
+South Australia,Southern European Languages,59128,1781516
+Western Australia,Southern European Languages,61268,2660026
+Tasmania,Southern European Languages,5003,557571
+Northern Territory,Southern European Languages,5916,232605
+Australian Capital Territory,Southern European Languages,12877,454499
+New South Wales,Northern European Languages,5504147,8072163
+Victoria,Northern European Languages,4406339,6503491
+Queensland,Northern European Languages,4195004,5156138
+South Australia,Northern European Languages,1394691,1781516
+Western Australia,Northern European Languages,2034655,2660026
+Tasmania,Northern European Languages,483224,557571
+Northern Territory,Northern European Languages,134717,232605
+Australian Capital Territory,Northern European Languages,327823,454499

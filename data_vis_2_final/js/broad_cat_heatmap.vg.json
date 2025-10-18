@@ -8,11 +8,27 @@
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/broad_cat_by_state.csv"
     },
+    "transform": [
+        {"calculate": "datum.speakers / datum.state_pop * 100","as":"prop_of_pop"}
+    ],
     "mark":"rect",
     "encoding": {
         "x":{
-            "field":"year",
-            "type": "ordinal"
+            "field":"state",
+            "type": "nominal"
+        },
+        "y":{
+            "field":"broad_cat",
+            "type": "nominal"
+        },
+        "color":{
+            "field":"prop_of_pop",
+            "type": "quantitative",
+            "title":"Proportion of State Population (%)",
+            "scale":{"scheme":"blues"}
         }
+    },
+    "config": {
+        "axis":{"grid": true,"tickBand":"extent"}
     }
 }
