@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height":400,
-    "width":600,
+    "width":"container",
     "background":"white",
     "title": "Proportion of Population Speaking each Language Group by State (2021)",
     "description": "Heat map showing the proportion of population that speak a language group at home by state",
@@ -28,7 +28,8 @@
             "field":"prop_of_pop",
             "type": "quantitative",
             "title":"Proportion of State Population (%)",
-            "scale":{"scheme":"blues"}
+            "scale":{"scheme":"blues"},
+            "legend":{"orient":"right"}
         },
         "tooltip":[
             {"field":"state","type": "nominal"},

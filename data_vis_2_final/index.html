@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FIT3179 Data Visualisation 2</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+<div class="page">
+
+    <!-- Data Vis Heading -->
+     <div class="pure-g">
+         <div class="pure-u-1-1">
+            <h1>
+                Linguistic Diversity in Australia
+                <span class="subtext">A visualisation of the different languages Autralian's speak at home</span>
+            </h1>
+         </div>
+    </div>
+
+    <!-- Section Heading -->
+    <div class="pure-g">
+        <div class="pure-u-1-1" style="text-align: center;">
+        <h3>English Proficiency and Patterns</h3>
+        </div>
+    </div>
+    <!-- Section Content--> 
+    <div class="chart-row">
+        <div class="chart-column" style="flex: 1;">
+            <div id="eng_lga_map" class="vis-container"></div>
+        </div> 
+    </div>
+    <div class="chart-row">
+        <div class="chart-column"style="flex: 1;">
+            <h2> TEXT DESCRIPTIONS </h2>
+        </div>
+        <div class="chart-column"style="flex: 2;">
+            <div id="fluency_dotplot" class="vis-container"></div>
+        </div> 
+    </div>
+
+    <!-- Section Heading -->
+    <div class="pure-g">
+        <div class="pure-u-1-1" style="text-align: center;">
+        <h3>Broad Language Categories</h3>
+        </div>
+    </div>
+    <!-- Section Content -->
+    <div class="chart-row">
+        <div class="chart-column" style="flex: 4;">
+            <div id="heatmap" class="vis-container"></div>
+        </div> 
+        <div class="chart-column" style="flex: 1;">
+            <h2> TEXT DESCRIPTIONS </h2>
+        </div>
+    </div>
+
+    <!-- Section Heading -->
+    <div class="pure-g">
+        <div class="pure-u-1-1" style="text-align: center;">
+        <h3>Top 10 Non-English Languages Spoken at Home</h3>
+        </div>
+    </div>
+    <!-- Section Content-->
+    <div class="chart-row">
+        <div class="chart-column">
+            <div id="top10_lollipop" class="vis-container"></div>
+            <div class="annotation">
+                <div class="annotation-title">Which languages do Australia know best?</div>
+                <div class="annotation-text">
+                Australia's Census questions asks residents about which language they speak at home. This is referred to as the LANP variables. This chart shows the top 10 most common languages spoken at home, excluding English.
+                </div>
+            </div>
+        </div>
+        <div class="chart-column">
+            <div id="slope_chart" class="vis-container"></div>
+        </div>
+    </div>
+
+    <!-- Data Vis Heading -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+            <h6>
+                Designed by Mickayla Kee
+                Data from abs.gov.au 
+                Resources: 
+            </h6>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var spec1 = "js/top_10_languages.vg.json";
+    var spec2 =  "js/eng_proficiency_dotplot.vg.json"; 
+    var spec3 = "js/speak_eng_only_lga.vg.json";
+    var spec4 = "js/top_10_languages_over_time.vg.json";
+    var spec5 = "js/lang_state_chloro.vg.json";
+    var spec6 = "js/broad_cat_heatmap.vg.json";
+
+    vegaEmbed('#top10_lollipop', spec1,{actions:false}).then(function(result) {
+    }).catch(console.error);
+  
+    vegaEmbed('#fluency_dotplot', spec2,{actions:false}).then(function(result) {
+    }).catch(console.error);
+
+    vegaEmbed('#eng_lga_map', spec3,{actions:false}).then(function(result) {
+    }).catch(console.error);
+    
+    vegaEmbed('#slope_chart', spec4,{actions:false}).then(function(result) {
+    }).catch(console.error);
+
+    vegaEmbed('#lang_state_chloro', spec5,{actions:false}).then(function(result) {
+    }).catch(console.error);
+
+    vegaEmbed('#heatmap', spec6,{actions:false}).then(function(result) {
+    }).catch(console.error);
+
+    
+</script>
+
+</body>
+
+

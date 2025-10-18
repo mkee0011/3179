@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height":400,
-    "width":600,
+    "height":280,
+    "width":"container",
     "background":"white",
     "title": "Top 10 Non-English Languages Spoken at Home in Australia (2021)",
     "description": "Lollipop chart showing the total number of speakers for the top 10 languages in Australia (exlcuding English)",

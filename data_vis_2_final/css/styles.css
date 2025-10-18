@@ -1,0 +1,90 @@
+.page {
+    width: 1080px;
+    background-color: #FDFDFD;
+    margin: auto;
+    padding: 30px;
+    padding-top: 25px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #238b45;
+    font-size: 40px;
+    font-weight: 800;
+    background-color: #BDEFCE;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+h1 .subtext {
+    display: block;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #238b45;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+h3 {
+    font-family: 'Arial', sans-serif;
+    color: #238b45;
+    background-color: #BDEFCE;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    border-radius: 8px;
+}
+
+h6 {
+    font-family: 'Arial', sans-serif;
+    color: #238b45;
+    background-color: #BDEFCE;
+    padding: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.vis-container {
+    width: 100%;
+}
+
+.chart-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+.chart-column {
+    flex: 1;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.annotation {
+    background: #CEF3DA; 
+    border-left: 4px solid #238b45; 
+    padding: 1rem; 
+    margin: 1rem 0; 
+    border-radius: 0 8px 8px 0;
+}
+
+.annotation-title {
+    font-weight: 600; 
+    color: #238b45; 
+    margin-bottom: 0.5rem;
+}
+
+.annotation-text {
+    color: #238b45; 
+    font-size: 0.9rem; 
+    line-height: 1.5;
+}

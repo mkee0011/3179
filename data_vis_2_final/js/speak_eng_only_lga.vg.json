@@ -1,89 +1,42 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height":500,
-    "width":600,
+    "width":"container",
     "background":"white",
-    "title": {
-        "text": {"expr":"'Proportion of ' + language_select + ' Speakers by State in Australia (2021)'"},
-        "fontSize":14
-    },
-    "projection": {"type": "mercator","scale":650, "center":[135,-28]},
+    "title": "English Only Speakers in Australia (2021)",
+    "projection": {"type": "mercator", "scale":700, "center":[135,-28]},
     "data": {
-      "url": "https://raw.githubusercontent.com/mkee0011/3179/refs/heads/main/data_vis_2_final/js/state_boundaries.topojson",
-      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/js/LGA_Boundaries.topojson",
+      "format": {"type": "topojson", "feature": "LGA_2021_AUST_GDA2020"}
     },
-    "params": [
-        {
-            "name":"language_select",
-            "value":"Mandarin",
-            "bind":{
-                "input":"select",
-                "options":[
-                    "Cantonese",
-                    "Mandarin",
-                    "Arabic",
-                    "Hindi",
-                    "Punjabi",
-                    "Italian",
-                    "Greek",
-                    "Vietnamese",
-                    "Spanish",
-                    "Nepali"
-                ],
-                "labels":[
-                    "Cantonese",
-                    "Mandarin",
-                    "Arabic",
-                    "Hindi",
-                    "Punjabi",
-                    "Italian",
-                    "Greek",
-                    "Vietnamese",
-                    "Spanish",
-                    "Nepali"
-                ],
-                "name": "Language: "
-            }
-        }
-    ],
     "transform": [
         {
-            "lookup":"properties.STE_NAME21",
-            "from":{
-                "data":{
-                    "url":"https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top10_bystate.csv"
+            "lookup": "properties.LGA_NAME21",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/speak_eng_only_by_lga.csv"
                 },
-                "key": "State",
-                "fields": [
-                    "Cantonese",
-                    "Mandarin",
-                    "Arabic",
-                    "Hindi",
-                    "Punjabi",
-                    "Italian",
-                    "Greek",
-                    "Vietnamese",
-                    "Spanish",
-                    "Nepali"
-                ]   
+                "key": "LGA",
+                "fields": ["speaks_english_only", "pop"]
             }
         },
-        {"calculate": "datum[language_select] * 100", "as": "language_prop"}
+        {"calculate": "datum.speaks_english_only/datum.pop * 100", "as": "prop_of_pop"}
     ],
-    "mark":{"type": "geoshape","stroke":"white"},
+    "mark": {"type": "geoshape","stroke":"white"},
     "encoding": {
-        "color":{
-            "field":"language_prop",
+        "color": {
+            "field": "prop_of_pop",
             "type": "quantitative",
-            "scale":{
-                "domain":[0,4],
-                "range":["#edf8fb","#238b45"]
+            "scale": {
+                "type": "threshold",
+                "domain": [50,60,70],
+                "range": ["#edf8fb", "#b2e2e2", "#66c2a4", "#238b45"]
             },
-            "legend":{"title":"Proportion of Population (%)","orient": "top-right"}
+            "legend":{"title":"% of Population","orient": "top-right"}
         },
-        "tooltip":[
-            {"field":"properties.STE_NAME21","type":"nominal","title":"State"},
-            {"field":"language_prop","type":"quantitative","format":".1f","title":"% of Population"}
+      "tooltip": [
+        {"field": "properties.LGA_NAME21", "type": "nominal", "title": "LGA"},
+        {"field": "prop_of_pop", "type": "quantitative", "format":".0f","title":"% of Population"}
         ]
     }
 }
