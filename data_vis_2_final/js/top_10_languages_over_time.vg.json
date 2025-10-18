@@ -3,8 +3,8 @@
     "height":400,
     "width":600,
     "background":"white",
-    "title": "Top 10 Languages Spoken at Home in Australia (Excluding English)",
-    "description": "Lollipop chart showing the total number of speakers for the top 10 languages in Australia (exlcuding English)",
+    "title": "Change in the Number of Non-English Language Speakers in Australia by Census Year",
+    "description": "Slope chart showing the change in the number of speakers for languages per census year",
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top10_overtime.csv"
     },
@@ -12,14 +12,16 @@
         "x":{
             "field":"year",
             "type": "ordinal",
-            "axis":{"title":"Census Year","labelAngle":0}
+            "axis":{"title":"Census Year","labelAngle":0, "grid":true,"domainColor":"white"},
+            "scale":{"padding":0}
         },
         "y":{
             "field":"speakers",
             "type": "quantitative",
             "axis":{
                 "title":"Number of Speakers",
-                "grid":false
+                "grid":false,
+                "values":[0,100000,200000,300000,400000,500000,600000,700000]
             }
         },
         "color":{
@@ -30,21 +32,6 @@
         }
     },
     "layer": [
-        {
-            "mark":{
-                "type":"rule",
-                "strokeWidth":1,
-                "color":"gray"
-            },
-            "transform": [
-                {"filter": {"field": "year", "oneOf": ["2011", "2016", "2021"]}}
-            ],
-            "encoding": {
-                "x": {"field": "year", "type": "ordinal"},
-                "y":{"value":0},
-                "y2":{"field":"speakers"}
-            }
-        },
         {
             "mark":{
                 "type":"line",
