@@ -1,0 +1,81 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height":500,
+    "width":600,
+    "background":"white",
+    "title": "English Only Speakers in Australia (2021)",
+    "projection": {"type": "mercator", "scale":700, "center":[135,-28]},
+    "data": {
+      "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/js/state_boundaries.topojson",
+      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+    },
+    "params": [
+        {
+            "name":"language_select",
+            "bind":{
+                "input":"select",
+                "options":[
+                    "Cantonese",
+                    "Mandarin",
+                    "Arabic",
+                    "Hindi",
+                    "Punjabi",
+                    "Italian",
+                    "Greek",
+                    "Vietnamese",
+                    "Spanish",
+                    "Nepali"
+                ],
+                "labels":[
+                    "Cantonese",
+                    "Mandarin",
+                    "Arabic",
+                    "Hindi",
+                    "Punjabi",
+                    "Italian",
+                    "Greek",
+                    "Vietnamese",
+                    "Spanish",
+                    "Nepali"
+                ],
+                "name": "Language: "
+            }
+        }
+    ],
+    "transform": [
+        {
+            "lookup":"properties.STE_NAME21",
+            "from":{
+                "data":{
+                    "url":"https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/ltop10_bystate.csv"
+                },
+                "key": "State",
+                "fields": [
+                    "Cantonese",
+                    "Mandarin",
+                    "Arabic",
+                    "Hindi",
+                    "Punjabi",
+                    "Italian",
+                    "Greek",
+                    "Vietnamese",
+                    "Spanish",
+                    "Nepali"
+                ]   
+            }
+        },
+        {"calculate": "datum[language_select] / datum[Population] * 100", "as": "language_prop"}
+    ],
+    "mark":{"type": "geoshape","stroke":"white"},
+    "encoding": {
+        "color":{
+            "field":"language_prop",
+            "type": "quantitative",
+            "legend":{"title":"Proportion of Population {%)"}
+        },
+        "tooltip":[
+            {"field":"properties.STE_NAME21","type":"nominal","title":"State"},
+            {"field":"language_prop","type":"quantitative","format":".0f","title":"% of Population"}
+        ]
+    }
+}

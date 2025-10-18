@@ -3,30 +3,38 @@
     "height":400,
     "width":600,
     "background":"white",
-    "title": "Change in the Number of Non-English Language Speakers in Australia by Census Year",
-    "description": "Slope chart showing the change in the number of speakers for languages per census year",
+    "title": "Proportion of Population Speaking each Language Group by State (2021)",
+    "description": "Heat map showing the proportion of population that speak a language group at home by state",
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/broad_cat_by_state.csv"
     },
     "transform": [
-        {"calculate": "datum.speakers / datum.state_pop * 100","as":"prop_of_pop"}
+        {"calculate": "datum.speakers / datum.state_pop * 100","as":"prop_of_pop"},
+        {"calculate": "datum.category == 'Other Languages' ? 'Other' : datum.category == 'Eastern Asian Languages' ? 'Eastern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southern Asian Languages' ? 'Southern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southwest and Central Asia Languages' ? 'Southwest and Central Asia': datum.category == 'Eastern European Languages' ? 'Eastern European' : datum.category == 'Southern European Languages' ? 'Southern European': datum.category == 'Northern European Languages' ? 'Northern European': datum.category","as":"simple_category"}
     ],
     "mark":"rect",
     "encoding": {
         "x":{
             "field":"state",
-            "type": "nominal"
+            "type": "nominal",
+            "axis":{"labelAngle":-45,"title":"State"}
         },
         "y":{
-            "field":"broad_cat",
-            "type": "nominal"
+            "field":"simple_category",
+            "type": "nominal",
+            "axis":{"title":"Language Category"}
         },
         "color":{
             "field":"prop_of_pop",
             "type": "quantitative",
             "title":"Proportion of State Population (%)",
             "scale":{"scheme":"blues"}
-        }
+        },
+        "tooltip":[
+            {"field":"state","type": "nominal"},
+            {"field":"simple_category","type":"nominal"},
+            {"field":"prop_of_pop","type": "quantitative","format":".1f"}
+        ]
     },
     "config": {
         "axis":{"grid": true,"tickBand":"extent"}
