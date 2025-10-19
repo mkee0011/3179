@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height":500,
-    "width":"container",
+    "width":600,
     "background":"white",
     "title": "English Only Speakers in Australia (2021)",
     "projection": {"type": "mercator", "scale":700, "center":[135,-28]},
@@ -9,29 +9,29 @@
       "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/js/LGA_Boundaries.topojson",
       "format": {"type": "topojson", "feature": "LGA_2021_AUST_GDA2020"}
     },
-    "transform": [
-        {
-            "lookup": "properties.LGA_NAME21",
-            "from": {
-                "data": {
-                    "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/speak_eng_only_by_lga.csv"
-                },
-                "key": "LGA",
-                "fields": ["speaks_english_only", "pop"]
-            }
-        },
-        {"calculate": "datum.speaks_english_only/datum.pop * 100", "as": "prop_of_pop"}
-    ],
     "layer":[
         {
-            "data": {
-              "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_final_2/djs/ne_10m_ocean.topojson",
-              "format": {"type": "topojson", "feature": "oceans"}
-            },
-            "mark": {"type": "geoshape", "fill": "skyblue"}
+        "data": {
+            "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/js/ne_10m_ocean.topojson",
+            "format": {"type": "topojson", "feature": "ne_10m_ocean"}
+        },
+        "mark": {"type": "geoshape", "fill": "skyblue"}
         },
         {
-            "mark": {"type": "geoshape","stroke":"white"},
+            "transform": [
+                {
+                    "lookup": "properties.LGA_NAME21",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/speak_eng_only_by_lga.csv"
+                        },
+                        "key": "LGA",
+                        "fields": ["speaks_english_only", "pop"]
+                    }
+                },
+                {"calculate": "datum.speaks_english_only/datum.pop * 100", "as": "prop_of_pop"}
+            ],
+            "mark": {"type": "geoshape","stroke":"lightgray"},
             "encoding": {
                 "color": {
                     "field": "prop_of_pop",
