@@ -24,7 +24,7 @@
             },
             "encoding": {
                 "x":{"field": "Language","type": "nominal","sort":"-y","axis":{"labelAngle":-45}},
-                "y":{"field":"Speakers","type": "quantitative","axis":{"title":"% of Population"}}
+                "y":{"field":"Speakers","type": "quantitative","axis":{"title":"% of Population"},"scale":{"domain":[0,3.0]}}
             }
         },
         {
@@ -43,6 +43,25 @@
                     {"field":"Speakers","type": "quantitative","title":"% of Population","format":".2f"}
                 ]
 
+            }
+        },
+        {
+            "mark":{
+                "type":"text",
+                "align":"center",
+                "baseline":"bottom",
+                "fontSize":11,
+                "fontStyle":"italic",
+                "dy":-10
+            },
+            "encoding": {
+                "x":{"field": "Language","type": "nominal","sort":"-y"},
+                "y":{"field":"Speakers","type": "quantitative"},
+                "text":{"field":"Language","type":"nominal"},
+                "tooltip":[
+                    {"field":"Language","type": "nominal"},
+                    {"field":"Speakers","type": "quantitative","title":"% of Population","format":".2f"}
+                ]
             }
         }
     ]

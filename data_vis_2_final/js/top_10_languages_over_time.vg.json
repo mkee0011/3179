@@ -8,6 +8,18 @@
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top10_overtime.csv"
     },
+    "params": [
+        {
+            "name":"selected_language",
+            "select":{"type":"point","fields":["Language"]},
+            "bind":"legend"
+        }
+    ],
+    "mark":{
+        "type":"line",
+        "point":{"filled":true,"opacity":1.0,"size":80},
+        "strokeWidth":2
+    },
     "encoding": {
         "x":{
             "field":"year",
@@ -25,28 +37,14 @@
             }
         },
         "color":{
-            "field":"language",
-            "type": "nominal",
-            "title": "Language",
-            "legend":{"orient":"right"}
+            "condition": {
+                "param": "selected_language",
+                "field": "Language",
+                "type": "nominal"
+            },
+            "value": "lightgray"
         }
     },
-    "layer": [
-        {
-            "mark":{
-                "type":"line",
-                "strokeWidth":2
-            }
-        },
-        {
-            "mark":{
-                "type": "point",
-                "filled":true,
-                "size":80,
-                "opacity":1.0
-            }
-        }
-    ],
     "config":{
         "view":{
             "stroke":null

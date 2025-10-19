@@ -3,14 +3,17 @@
     "height":400,
     "width":"container",
     "background":"white",
-    "title": "Proportion of Population Speaking each Language Group by State (2021)",
+    "title":{
+        "text":"Proportion of Population Speaking each Language Group by State (2021)",
+        "fontSize":14
+    },
     "description": "Heat map showing the proportion of population that speak a language group at home by state",
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/broad_cat_by_state.csv"
     },
     "transform": [
         {"calculate": "datum.speakers / datum.state_pop * 100","as":"prop_of_pop"},
-        {"calculate": "datum.category == 'Other Languages' ? 'Other' : datum.category == 'Eastern Asian Languages' ? 'Eastern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southern Asian Languages' ? 'Southern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southwest and Central Asian Languages' ? 'Southwest and Central Asian': datum.category == 'Eastern European Languages' ? 'Eastern European' : datum.category == 'Southern European Languages' ? 'Southern European': datum.category == 'Northern European Languages' ? 'Northern European': datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous': datum.category","as":"simple_category"},
+        {"calculate": "datum.category == 'Other Languages' ? 'Other' : datum.category == 'Eastern Asian Languages' ? 'Eastern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southern Asian Languages' ? 'Southern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southwest and Central Asian Languages' ? 'Southwest and Central Asian': datum.category == 'Eastern European Languages' ? 'Eastern European' : datum.category == 'Southern European Languages' ? 'Southern European': datum.category == 'Northern European Languages' ? 'Northern European': datum.category","as":"simple_category"},
         {"calculate": "datum.state == 'Australian Capital Territory' ? 'ACT' : datum.state == 'New South Wales' ? 'NSW' : datum.state == 'Victoria' ? 'VIC' : datum.state == 'Queensland' ? 'QLD' : datum.state =='Western Australia' ? 'WA' : datum.state == 'Northern Territory' ? 'NT' : datum.state=='South Australia' ? 'SA' : datum.state == 'Tasmania' ? 'TAS' : datum.state","as":"state"}
     ],
     "mark":"rect",
@@ -23,6 +26,17 @@
         "y":{
             "field":"simple_category",
             "type": "nominal",
+            "sort":[
+                "Other",
+                "Australian Indigenous",
+                "Eastern Asian",
+                "Southeast Asian", 
+                "Southern Asian",
+                "Southwest and Central Asian",
+                "Northern European",
+                "Eastern European",
+                "Southern European"
+            ],   
             "axis":{"title":"Language Category"}
         },
         "color":{
@@ -33,7 +47,7 @@
             "legend":{"orient":"right","title":"% of Population"}
         },
         "tooltip":[
-            {"field":"state","type": "nominal"},
+            {"field":"state","type": "nominal","title":"State"},
             {"field":"simple_category","type":"nominal", "title":"Language Category"},
             {"field":"prop_of_pop","type": "quantitative","format":".2f","title": "% of Population"}
         ]
