@@ -4,8 +4,8 @@
     "width":"container",
     "background":"white",
     "title": {
-        "text":"English Proficiency Level Among Non-English Language Speakers",
-        "fontSize":14
+        "text":"English Level Where Another Language is Spoken at Home",
+        "fontSize":15
     },
     "description": "Dot plot showing English proficiency levels of other language speakers",
     "data": {

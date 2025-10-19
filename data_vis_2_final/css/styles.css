@@ -15,7 +15,7 @@ h1 {
     background-color: #BDEFCE;
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h1 .subtext {
@@ -23,9 +23,17 @@ h1 .subtext {
     text-align: center;
     font-family: 'Arial', sans-serif;
     color: #238b45;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     margin-top: 8px;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #121212;
+    font-size: 17px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 h3 {
@@ -48,6 +56,13 @@ h6 {
     border-radius: 8px;
 }
 
+p {
+    font-family: 'Arial', sans-serif;
+    color: #121212;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
 .vis-container {
     width: 100%;
 }
@@ -72,19 +87,13 @@ h6 {
 .annotation {
     background: #CEF3DA; 
     border-left: 4px solid #238b45; 
-    padding: 1rem; 
-    margin: 1rem 0; 
+    padding: 15px; 
+    margin: 15px; 
     border-radius: 0 8px 8px 0;
-}
-
-.annotation-title {
-    font-weight: 600; 
-    color: #238b45; 
-    margin-bottom: 0.5rem;
 }
 
 .annotation-text {
     color: #238b45; 
-    font-size: 0.9rem; 
+    font-size: 15px; 
     line-height: 1.5;
 }

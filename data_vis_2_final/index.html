@@ -27,7 +27,7 @@
          <div class="pure-u-1-1">
             <h1>
                 Linguistic Diversity in Australia
-                <span class="subtext">A visualisation of the different languages Autralian's speak at home</span>
+                <span class="subtext">An exploration into the different languages Autralian's speak at home through the 2021 Australian Census</span>
             </h1>
          </div>
     </div>
@@ -41,9 +41,12 @@
     <!-- Section Content--> 
     <div class="chart-row">
         <div class="chart-column" style="flex: 1;">
-            <p> Text description and stuff </p>
+            <h2> Who speaks English in Australia? </h2>
+            <p>While Australia does not have an official language, English is the unofficial recognised language of Australia. </p>
+            <p>In the 2021 Australia Census, the variable ENGLP (Proficiency in Spoken English) was recorded for individuals who reported speaking a language other than English at home.</p>
+            <p>👀 Explore the percentage of people in Australia who only speak English at home</p>
         </div> 
-        <div class="chart-column" style="flex: 4;">
+        <div class="chart-column" style="flex: 5;">
             <div id="eng_lga_map" class="vis-container"></div>
             <div class="annotation">
                 <div class="annotation-text">
@@ -55,9 +58,19 @@
     <div class="chart-row">
         <div class="chart-column"style="flex: 1;">
             <div id="fluency_dotplot" class="vis-container"></div>
+            <div class="annotation">
+                <div class="annotation-text">
+                    👀 Explore the English Profciency Level of people in Australia who do not use English as their main language at home
+                </div>
+            </div>
         </div> 
         <div class="chart-column"style="flex: 1;">
             <div id="diverging_bar" class="vis-container"></div>
+            <div class="annotation">
+                <div class="annotation-text">
+                    👀 Compare the number of people who use English as their main language at home to those who don't by state
+                </div>
+            </div>
         </div> 
     </div>
 
@@ -73,7 +86,9 @@
             <div id="heatmap" class="vis-container"></div>
         </div> 
         <div class="chart-column" style="flex: 1;">
-            <h2> TEXT DESCRIPTIONS </h2>
+            <h2> What type of languages do Australians speaks at home? </h2>
+            <p> The Census uses the vairable LANP (Language used at home) to identify the main language used at home</p>
+            <p> 👀 Explore the geographic areas where these languages originate from and who in Australia speaks them at home</p>
         </div>
     </div>
 
@@ -110,6 +125,21 @@
             <p> Text description and stuff </p>
         </div>
     </div>
+    <div class="chart-row">
+        <div class="chart-column" style="flex: 1;">
+            <div id="stacked_bar" class="vis-container"></div>
+            <div class="annotation">
+                <div class="annotation-text">
+                👆 Use the 'State' selector to explore the number of speakers of different languages in a specific state!
+                </div>
+            </div>
+            <div class="annotation">
+                <div class="annotation-text">
+                Interested to see languages with a certain minmum amount of speakers? Use the 'Minimum Number of Speakers' slider to filter the languages shown!
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Data Vis Heading -->
     <div class="pure-g">
@@ -135,6 +165,8 @@
     var spec5 = "js/lang_state_chloro.vg.json";
     var spec6 = "js/broad_cat_heatmap.vg.json";
     var spec7 = "js/diverging_bar.vg.json";
+    var spec8 = "js/stacked_bar_chart.vg.json";
+
 
     vegaEmbed('#top10_lollipop', spec1, {actions:false}).then(function(result) {
     }).catch(console.error);
@@ -155,6 +187,9 @@
     }).catch(console.error);
 
     vegaEmbed('#diverging_bar', spec7,{actions:false}).then(function(result) {
+    }).catch(console.error);
+    
+    vegaEmbed('#stacked_bar', spec8,{actions:false}).then(function(result) {
     }).catch(console.error);
 
 </script>

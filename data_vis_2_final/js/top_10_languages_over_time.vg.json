@@ -5,7 +5,7 @@
     "background":"white",
     "title": {
         "text":"Change in the Number of Top 10 Non-English Language Speakers",
-        "fontSize":14
+        "fontSize":15
     },
     "description": "Slope chart showing the change in the number of speakers for languages per census year",
     "data": {

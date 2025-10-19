@@ -4,8 +4,8 @@
     "width":"container",
     "background":"white",
     "title": {
-        "text": {"expr":"'Proportion of ' + language_select + ' Speakers by State in Australia (2021)'"},
-        "fontSize":14
+        "text": {"expr":"'Proportion of ' + language_select + ' Speakers by State in Australia'"},
+        "fontSize":15
     },
     "projection": {        
         "type": "equirectangular",

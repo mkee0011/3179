@@ -1,0 +1,145 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height":400,
+    "width":"container",
+    "background":"white",
+    "title": {
+        "text":"The Top 10 Non-English Languages Spoken in Australia",
+        "fontSize":15
+    },
+    "description": "Stacked bar chart showing number of speakers per language, segmented by state.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top10_state_long.csv"
+    },
+    "params":[
+        {
+            "name":"speakers_above",
+            "value":0,
+            "bind": {
+                "input":"range",
+                "min":0,
+                "max":270000,
+                "step": 10000,
+                "name": "Minimum Number of Speakers: "
+            }
+        },
+        {
+            "name":"state_select",
+            "bind":{
+                "input":"select",
+                "options":[
+                    null,
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "Australian Capital Territory",
+                    "Northern Territory",
+                    "Tasmania",
+                    "Western Australia",
+                    "South Australia"
+                ],
+                "labels":[
+                    "Show All",
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "Australian Capital Territory",
+                    "Northern Territory",
+                    "Tasmania",
+                    "Western Australia",
+                    "South Australia"
+                ],
+                "name": "State: "
+            }
+        }
+    ],
+    "transform": [
+        {"filter":"datum.Speakers > speakers_above"},
+        {"filter":"!state_select||datum.State == state_select"}
+    ],
+    "layer":[
+        {
+            "mark":"bar",
+            "encoding": {
+                "x": {
+                    "field": "Language",
+                    "type": "nominal",
+                    "axis": {"title": "Language", "labelAngle": -45},
+                    "sort": "ascending"
+                },
+                "y": {
+                    "field": "Speakers",
+                    "type": "quantitative",
+                    "axis": {"title": "Number of Speakers"}
+                },
+            "color": {
+                "field": "State",
+                "type": "nominal",
+                "scale":{
+                "domain":[
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "Australian Capital Territory",
+                    "Northern Territory",
+                    "Tasmania",
+                    "Western Australia",
+                    "South Australia"
+                ],
+                "range":[
+                    "#8dd3c7",
+                    "#bebada",
+                    "#ffffb3",
+                    "#fb8072",
+                    "#80b1d3",
+                    "#fdb462",
+                    "#b3de69",
+                    "#fccde5"
+                ]
+            }
+        },
+        "tooltip":[
+            {"field":"State", "type": "nominal"},
+            {"field":"Speakers","type": "quantitative","title":"Number of Speakers"}
+        ]
+        }
+        },
+        {
+            "transform": [
+                {"aggregate": [{
+                    "op": "sum",
+                    "field":"Speakers",
+                    "as":"Total"
+                }],"groupby": ["Language"]
+                }
+            ],
+            "mark":{
+                "type":"text",
+                "align":"center",
+                "baseline":"bottom",
+                "fontSize":11.5,
+                "fontStyle":"italic"
+
+            },
+            "encoding": {
+                "x": {
+                    "field": "Language",
+                    "type": "nominal",
+                    "axis": {"title": "Language", "labelAngle": -45},
+                    "sort": "ascending"
+                },
+                "y": {
+                    "field": "Total",
+                    "type": "quantitative",
+                    "axis": {"title": "Number of Speakers"}
+                },
+                "text":{"field":"Total","type":"quantitative"},
+                "color":{"value":"black"},
+                "tooltip":[
+                    {"field":"Language", "type": "nominal"},
+                    {"field":"Total","type": "quantitative","title":"Total Number of Speakers"}
+                ]
+            }
+        }
+    ]
+}

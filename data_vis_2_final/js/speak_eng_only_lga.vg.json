@@ -4,8 +4,8 @@
     "width":"container",
     "background":"white",
     "title": {
-        "text":"English Only Speakers in Australia (2021)",
-        "fontSize":14
+        "text":"English Only Speakers in Australia",
+        "fontSize":16
     },
     "params": [
         {

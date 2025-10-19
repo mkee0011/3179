@@ -4,7 +4,7 @@
     "width": "container",
     "title": {
         "text":"English Only Speakers vs Other Languages Speakers by State",
-        "fontSize":14
+        "fontSize":15
     },
     "description": "A diverging bar chart to compare the proportion of English-only speakers and other language speakers across Australian States",
     "data": { "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/englp_comparison.csv"},

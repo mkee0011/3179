@@ -4,8 +4,8 @@
     "width":"container",
     "background":"white",
     "title":{
-        "text":"Proportion of Population Speaking each Language Group by State (2021)",
-        "fontSize":14
+        "text":"Proportion of Population Speaking each Language Group by State",
+        "fontSize":15
     },
     "description": "Heat map showing the proportion of population that speak a language group at home by state",
     "data": {
