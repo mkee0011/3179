@@ -46,16 +46,6 @@ h3 {
     border-radius: 8px;
 }
 
-h6 {
-    font-family: 'Arial', sans-serif;
-    color: #238b45;
-    background-color: #BDEFCE;
-    padding: 20px;
-    font-weight: 400;
-    font-size: 15px;
-    border-radius: 8px;
-}
-
 p {
     font-family: 'Arial', sans-serif;
     color: #121212;
@@ -96,4 +86,20 @@ p {
     color: #238b45; 
     font-size: 15px; 
     line-height: 1.5;
+}
+
+.footer{
+    width:100%;
+    box-sizing: border-box;
+    background-color: #BDEFCE;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.footer h6 {
+    font-family: 'Arial', sans-serif;
+    color: #238b45;
+    font-size: 12px;
+    font-weight: 100;
+    margin: 5px;
 }

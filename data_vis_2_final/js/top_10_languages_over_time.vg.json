@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height":400,
+    "height":432,
     "width":"container",
     "background":"white",
     "title": {
@@ -46,7 +46,12 @@
                 "type": "nominal"
             },
             "value": "lightgray"
-        }
+        },
+        "tooltip":[
+            {"field":"Language","type":"nominal"},
+            {"field":"year","type":"ordinal","title":"Census Year"},
+            {"field":"speakers","type":"quantitative","title":"Number of Speakers","format":","}
+        ]
     },
     "config":{
         "view":{

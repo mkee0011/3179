@@ -40,7 +40,7 @@
     </div>
     <!-- Section Content--> 
     <div class="chart-row">
-        <div class="chart-column" style="flex: 1;">
+        <div class="chart-column" style="flex: 1; justify-content:center;">
             <h2> Who speaks English in Australia? </h2>
             <p>While Australia does not have an official language, English is the unofficial recognised language of Australia. </p>
             <p>In the 2021 Australia Census, the variable ENGLP (Proficiency in Spoken English) was recorded for individuals who reported speaking a language other than English at home.</p>
@@ -85,7 +85,7 @@
         <div class="chart-column" style="flex: 4;">
             <div id="heatmap" class="vis-container"></div>
         </div> 
-        <div class="chart-column" style="flex: 1;">
+        <div class="chart-column" style="flex: 1; justify-content: center;">
             <h2> What type of languages do Australians speaks at home? </h2>
             <p> The Census uses the vairable LANP (Language used at home) to identify the main language used at home</p>
             <p> 👀 Explore the geographic areas where these languages originate from and who in Australia speaks them at home</p>
@@ -102,6 +102,11 @@
     <div class="chart-row">
         <div class="chart-column" style="flex: 1;">
             <div id="top10_lollipop" class="vis-container"></div>
+            <div class="annotation">
+                <div class="annotation-text">
+                The Top 10 Non-English Languages Spoken at Home in Australia according to the 2021 Census
+                </div>
+            </div>
         </div>
         <div class="chart-column" style="flex: 1;">
             <div id="slope_chart" class="vis-container"></div>
@@ -113,16 +118,18 @@
         </div>
     </div>
     <div class="chart-row">
-        <div class="chart-column" style="flex: 2;">
+        <div class="chart-column" style="flex: 1; justify-content: center;">
+            <h2> How common are the Top 10 Non-English Languages acrosss Australia? </h2>
+            <p> 👀 Explore what percentage of each state speak one of the Top 10 Non-English Languages! </p>
+            <p> 👀 Use the chart below to take a deeper dive into the number of speakers of each language, per state! </p>
+        </div> 
+        <div class="chart-column" style="flex: 4;">
             <div id="lang_state_chloro" class="vis-container"></div>
             <div class="annotation">
                 <div class="annotation-text">
                 👆 Use the 'Language' selector to explore the proportion of speakers of different languages across Australia!
                 </div>
             </div>
-        </div>
-        <div class="chart-column" style="flex: 1;">
-            <p> Text description and stuff </p>
         </div>
     </div>
     <div class="chart-row">
@@ -135,21 +142,20 @@
             </div>
             <div class="annotation">
                 <div class="annotation-text">
-                Interested to see languages with a certain minmum amount of speakers? Use the 'Minimum Number of Speakers' slider to filter the languages shown!
+                👆 Interested to see languages with a certain minmum amount of speakers? Use the 'Minimum Number of Speakers' slider to filter the languages shown!
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Data Vis Heading -->
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-            <h6>
-                Designed by Mickayla Kee
-                Data from abs.gov.au 
-                Resources: 
-            </h6>
-        </div>
+    <div class="footer">
+        <h6>Designed by Mickayla Kee</h6>
+        <h6>Data from the 2021, 2016 and 2011 Australian census retrieved from abs.gov.au</h6>
+        <h6>Resources:</h6>
+        <h6>    https://www.abs.gov.au/census/about-census/delivering-2021-census/about-census</h6>
+        <h6>    https://digital.atlas.gov.au/datasets/52894f08317c47e9b54d3bb526f6dd8b_11/explore?location=-24.211629%2C132.406166%2C4.59</h6>
+        <h6>    https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-ocean/</h6>
     </div>
 
 </div>
