@@ -3,7 +3,10 @@
     "height":280,
     "width":"container",
     "background":"white",
-    "title": "Top 10 Non-English Languages Spoken at Home in Australia (2021)",
+    "title": {
+        "text":"Top 10 Non-English Languages Spoken at Home in Australia (2021)",
+        "fontSize":14
+    },
     "description": "Lollipop chart showing the total number of speakers for the top 10 languages in Australia (exlcuding English)",
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top10_bystate.csv"

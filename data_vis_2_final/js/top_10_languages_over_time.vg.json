@@ -3,7 +3,10 @@
     "height":400,
     "width":"container",
     "background":"white",
-    "title": "Change in the Number of Top 10 Non-English Language Speakers",
+    "title": {
+        "text":"Change in the Number of Top 10 Non-English Language Speakers",
+        "fontSize":14
+    },
     "description": "Slope chart showing the change in the number of speakers for languages per census year",
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/top10_overtime.csv"
