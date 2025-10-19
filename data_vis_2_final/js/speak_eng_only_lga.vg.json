@@ -4,12 +4,65 @@
     "width":600,
     "background":"white",
     "title": "English Only Speakers in Australia (2021)",
-    "projection": {"type": "mercator", "scale":700, "center":[135,-28]},
+    "params": [
+        {
+            "name": "zoom_level",
+            "value": 30000,
+            "bind": {
+                "input": "range",
+                "min": 3500,
+                "max": 60000,
+                "step": 100,
+                "name": "Zoom: "
+            }
+        },
+        {
+            "name": "center_to",
+            "value": [-25.9, 134.3],
+            "bind": {
+                "input": "select",
+                "options": [
+                    [-25.9, 134.3],
+                    [-25.9, 134.3],
+                    [-25.9, 134.3],
+                    [-25.9, 134.3],
+                    [145, -37.95],
+                    [144.3, -38.1],
+                    [144.9, -36.7],
+                    [147.1, -38.1]
+                ],
+                "labels": [
+                    "All States",
+                    "Australian Capital Territory",
+                    "New South Wales",
+                    "Northern Territory",
+                    "South Australia",
+                    "Tasmania",
+                    "Queensland",
+                    "Western Australia",
+                    "Victoria"
+                ],
+                "name": "Map Centre: "
+            }
+        }
+    ],
+    "projection": {
+        "type": "equirectangular",
+        "center": { "expr": "center_to" },
+        "scale": { "expr": "zoom_level" }
+    },
     "data": {
       "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/js/LGA_Boundaries.topojson",
       "format": {"type": "topojson", "feature": "LGA_2021_AUST_GDA2020"}
     },
     "layer":[
+        {
+        "data": {
+            "url": "https://raw.githubusercontent.com/mkee0011/3179/refs/heads/main/data_vis_2_final/js/state_boundaries.topojson",
+            "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+            },
+            "mark":{"type":"geoshape","fill":"none","stroke":"black"}
+        },
         {
         "data": {
             "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/js/ne_10m_ocean.topojson",
