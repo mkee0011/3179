@@ -1,43 +1,51 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-    "description": "A population pyramid for the US in 2000, created using stack. See https://vega.github.io/vega-lite/examples/concat_population_pyramid.html for a variant of this created using concat.",
-    "width": 300,
-    "height": 200,
+    "height": 400,
+    "width": "container",
+    "title": {
+        "text":"English Only Speakers vs Other Languages Speakers by State",
+        "fontSize":14
+    },
+    "description": "A diverging bar chart to compare the proportion of English-only speakers and other language speakers across Australian States",
     "data": { "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/englp_comparison.csv"},
     "transform": [
-        {"fold":["speaks_english_only","uses_other_language"],"as":["lang_cat","number"]},
+        {"fold":["Speaks English Only","Uses Other Language"],"as":["lang_cat","number"]},
         {"calculate": "datum.number / datum.population * 100", "as":"prop_of_pop"},
-        {"calculate": "datum.lang_cat == 'speaks_english_only' ? datum.prop_of_pop : -datum.prop_of_pop", "as":"left_percent"},
+        {"calculate": "datum.lang_cat == 'Speaks English Only' ? datum.prop_of_pop : -datum.prop_of_pop", "as":"left_percent"}
     ],
-    "mark": "bar",
-    "encoding": {
-        "x":{
-            "field": "left_percent",
-            "type": "quantitative",
-            "axis": {
-                "title": "Percentage of Population",
+    "layer":[
+        {
+            "mark": "bar",
+            "encoding": {
+                "x":{
+                    "field": "left_percent",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "% of Population"
+                    }
+                },
+                "y":{
+                    "field":"state",
+                    "type":"nominal",
+                    "sort":"-x",
+                    "axis":null
+                },
+                "color":{
+                    "field":"lang_cat",
+                    "scale":{
+                        "domain":["Uses Other Language","Speaks English Only"],
+                        "range":["#2b8cbe","#2ca25f"]
+                    },
+                    "legend":{"orient": "bottom","title":"Language Category"}
+                },
+                "tooltip":[
+                    {"field":"state","type":"ordinal","title":"State"},
+                    {"field":"lang_cat","type":"nominal","title":"Language Category"},
+                    {"field":"prop_of_pop","type":"quantitative","title":"% of Population","format":".1f"}
+                ]
             }
-        },
-        "y":{
-            "field":"state",
-            "type":"ordinal",
-            "sort":"-x",
-            "axis":null
-        },
-        "color":{
-            "field":"lang_cat",
-            "scale":{
-                "domain":["speaks_english_only","uses_other_language"],
-                "range":["#1f77b4","#ff7f0e"]
-            },
-            "legend":{"orient": "top","title":null}
-        },
-        "tooltip":[
-            {"field":"state","type":"ordinal","title":"State"},
-            {"field":"lang_cat","type":"nominal","title":"Language Category"},
-            {"field":"prop_of_pop","type":"quantitative","title":"Proportion of Population","format":".1f"}
-        ]
-    },
+        }
+    ],
     "config": {
         "view": {"stroke": null},
         "axis": {"grid": false}

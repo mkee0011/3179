@@ -49,10 +49,10 @@
     </div>
     <div class="chart-row">
         <div class="chart-column"style="flex: 1;">
-            <h2> TEXT DESCRIPTIONS </h2>
-        </div>
-        <div class="chart-column"style="flex: 2;">
             <div id="fluency_dotplot" class="vis-container"></div>
+        </div> 
+        <div class="chart-column"style="flex: 1;">
+            <div id="diverging_bar" class="vis-container"></div>
         </div> 
     </div>
 
@@ -128,6 +128,7 @@
     var spec4 = "js/top_10_languages_over_time.vg.json";
     var spec5 = "js/lang_state_chloro.vg.json";
     var spec6 = "js/broad_cat_heatmap.vg.json";
+    var spec7 = "js/diverging_bar.vg.json";
 
     vegaEmbed('#top10_lollipop', spec1,{actions:false}).then(function(result) {
     }).catch(console.error);
@@ -145,6 +146,9 @@
     }).catch(console.error);
 
     vegaEmbed('#heatmap', spec6,{actions:false}).then(function(result) {
+    }).catch(console.error);
+
+    vegaEmbed('#diverging_bar', spec7,{actions:false}).then(function(result) {
     }).catch(console.error);
 
     

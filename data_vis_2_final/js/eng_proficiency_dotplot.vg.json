@@ -1,9 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height":280,
+    "height":400,
     "width":"container",
     "background":"white",
-    "title": "English Proficiency Level Among Non-English Language Speakers",
+    "title": {
+        "text":"English Proficiency Level Among Non-English Language Speakers",
+        "fontSize":14
+    },
     "description": "Dot plot showing English proficiency levels of other language speakers",
     "data": {
         "url": "https://raw.githubusercontent.com/mkee0011/3179/main/data_vis_2_final/data/eng_prof_by_state.csv"
@@ -16,7 +19,7 @@
     "mark":{
         "type": "point",
         "filled": true,
-        "size":100
+        "size":150
     },
     "encoding": {
         "x":{
@@ -29,14 +32,14 @@
         "y":{
             "field":"prop_of_pop",
             "type":"quantitative",
-            "axis":{"title":"Proportion of State (%)"}
+            "axis":{"title":"% of Population"}
         },
         "color":{
             "field":"eng_proficiency_label",
             "type":"nominal",
             "legend":{
                 "title": "English Proficiency Level",
-                "orient":"right"
+                "orient":"bottom"
             },
             "sort":["Very Well","Well","Not Well","Not At All"],
             "scale":{
@@ -47,7 +50,7 @@
         "tooltip": [
             {"field": "state", "type": "nominal", "title": "State"},
             {"field":"eng_proficiency_label","type":"nominal","title":"English Proficiency Level"},
-            {"field": "prop_of_pop", "type": "quantitative", "format":".1f","title":"Proportion of State Population"}
+            {"field": "prop_of_pop", "type": "quantitative", "format":".1f","title":"% of State Population"}
             ]
     }
 }
