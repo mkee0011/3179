@@ -12,18 +12,19 @@
         {"filter":"datum.State=='Total'"},
         {
             "fold":["Cantonese","Mandarin","Vietnamese","Arabic","Hindi","Punjabi","Nepali","Greek","Italian","Spanish"], "as":["Language","Speakers"]
-        }
+        },
+        {"calculate": "datum.Speakers * 100","as":"Speakers"}   
     ],
     "layer": [
         {
             "mark":{
                 "type":"rule",
                 "strokeWidth":2,
-                "color":"blue"
+                "color":"#238b45"
             },
             "encoding": {
                 "x":{"field": "Language","type": "nominal","sort":"-y","axis":{"labelAngle":-45}},
-                "y":{"field":"Speakers","type": "quantitative","axis":{"title":"Numer of Speakers"}}
+                "y":{"field":"Speakers","type": "quantitative","axis":{"title":"% of Population"}}
             }
         },
         {
@@ -31,7 +32,7 @@
                 "type":"point",
                 "filled": true,
                 "size":300,
-                "color":"blue",
+                "color":"#238b45",
                 "opacity":1
             },
             "encoding": {
@@ -39,7 +40,7 @@
                 "y":{"field":"Speakers","type": "quantitative"},
                 "tooltip":[
                     {"field":"Language","type": "nominal"},
-                    {"field":"Speakers","type": "quantitative","title":"Number of Speakers"}
+                    {"field":"Speakers","type": "quantitative","title":"% of Population","format":".2f"}
                 ]
 
             }

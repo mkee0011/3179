@@ -22,21 +22,32 @@
         },
         {"calculate": "datum.speaks_english_only/datum.pop * 100", "as": "prop_of_pop"}
     ],
-    "mark": {"type": "geoshape","stroke":"white"},
-    "encoding": {
-        "color": {
-            "field": "prop_of_pop",
-            "type": "quantitative",
-            "scale": {
-                "type": "threshold",
-                "domain": [50,60,70],
-                "range": ["#edf8fb", "#b2e2e2", "#66c2a4", "#238b45"]
+    "layer":[
+        {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+              "format": {"type": "topojson", "feature": "oceans"}
             },
-            "legend":{"title":"% of Population","orient": "top-right"}
+            "mark": {"type": "geoshape", "fill": "skyblue"}
         },
-      "tooltip": [
-        {"field": "properties.LGA_NAME21", "type": "nominal", "title": "LGA"},
-        {"field": "prop_of_pop", "type": "quantitative", "format":".0f","title":"% of Population"}
-        ]
-    }
+        {
+            "mark": {"type": "geoshape","stroke":"white"},
+            "encoding": {
+                "color": {
+                    "field": "prop_of_pop",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [50,60,70],
+                        "range": ["#edf8fb", "#b2e2e2", "#66c2a4", "#238b45"]
+                    },
+                    "legend":{"title":"% of Population","orient": "top-right"}
+                },
+            "tooltip": [
+                {"field": "properties.LGA_NAME21", "type": "nominal", "title": "LGA"},
+                {"field": "prop_of_pop", "type": "quantitative", "format":".0f","title":"% of Population"}
+                ]
+            }
+        }
+    ]
 }

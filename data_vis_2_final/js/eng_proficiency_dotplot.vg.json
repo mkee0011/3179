@@ -10,12 +10,13 @@
     },
     "transform": [
         {"calculate": "datum.speakers/datum.state_pop*100","as":"prop_of_pop"},
-        {"calculate": "datum.proficiency == 'other_lang_and_speaks_English_Not_at_all' ? 'Not At All' : datum.proficiency == 'other_lang_and_speaks_English_Not_well' ? 'Not Well' : datum.proficiency == 'other_lang_andspeaks_English_Well' ? 'Well' : datum.proficiency == 'other_lang_and_speaks_English_Very_well' ? 'Very Well': datum.proficiency","as": "eng_proficiency_label"}   
+        {"calculate": "datum.proficiency == 'other_lang_and_speaks_English_Not_at_all' ? 'Not At All' : datum.proficiency == 'other_lang_and_speaks_English_Not_well' ? 'Not Well' : datum.proficiency == 'other_lang_andspeaks_English_Well' ? 'Well' : datum.proficiency == 'other_lang_and_speaks_English_Very_well' ? 'Very Well': datum.proficiency","as": "eng_proficiency_label"}  ,
+        {"calculate": "datum.state == 'Australian Capital Territory' ? 'ACT' : datum.state == 'New South Wales' ? 'NSW' : datum.state == 'Victoria' ? 'VIC' : datum.state == 'Queensland' ? 'QLD' : datum.state =='Western Australia' ? 'WA' : datum.state == 'Northern Territory' ? 'NT' : datum.state=='South Australia' ? 'SA' : datum.state == 'Tasmania' ? 'TAS' : datum.state","as":"state"} 
     ],
     "mark":{
         "type": "point",
         "filled": true,
-        "size":80
+        "size":100
     },
     "encoding": {
         "x":{
@@ -23,7 +24,7 @@
             "type":"nominal",
             "axis":{
                 "title":"State",
-                "labelAngle":-45}
+                "labelAngle":0}
         },
         "y":{
             "field":"prop_of_pop",
@@ -35,7 +36,7 @@
             "type":"nominal",
             "legend":{
                 "title": "English Proficiency Level",
-                "orient":"bottom"
+                "orient":"right"
             },
             "sort":["Very Well","Well","Not Well","Not At All"],
             "scale":{
@@ -45,7 +46,7 @@
         },
         "tooltip": [
             {"field": "state", "type": "nominal", "title": "State"},
-            {"field":"proficiency_label","type":"nominal","title":"English Proficiency Level"},
+            {"field":"eng_proficiency_label","type":"nominal","title":"English Proficiency Level"},
             {"field": "prop_of_pop", "type": "quantitative", "format":".1f","title":"Proportion of State Population"}
             ]
     }

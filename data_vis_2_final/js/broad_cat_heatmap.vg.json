@@ -10,14 +10,15 @@
     },
     "transform": [
         {"calculate": "datum.speakers / datum.state_pop * 100","as":"prop_of_pop"},
-        {"calculate": "datum.category == 'Other Languages' ? 'Other' : datum.category == 'Eastern Asian Languages' ? 'Eastern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southern Asian Languages' ? 'Southern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southwest and Central Asia Languages' ? 'Southwest and Central Asia': datum.category == 'Eastern European Languages' ? 'Eastern European' : datum.category == 'Southern European Languages' ? 'Southern European': datum.category == 'Northern European Languages' ? 'Northern European': datum.category","as":"simple_category"}
+        {"calculate": "datum.category == 'Other Languages' ? 'Other' : datum.category == 'Eastern Asian Languages' ? 'Eastern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southern Asian Languages' ? 'Southern Asian' : datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous Languages' : datum.category == 'Southeast Asian Languages' ? 'Southeast Asian' : datum.category == 'Southwest and Central Asian Languages' ? 'Southwest and Central Asian': datum.category == 'Eastern European Languages' ? 'Eastern European' : datum.category == 'Southern European Languages' ? 'Southern European': datum.category == 'Northern European Languages' ? 'Northern European': datum.category == 'Australian Indigenous Languages' ? 'Australian Indigenous': datum.category","as":"simple_category"},
+        {"calculate": "datum.state == 'Australian Capital Territory' ? 'ACT' : datum.state == 'New South Wales' ? 'NSW' : datum.state == 'Victoria' ? 'VIC' : datum.state == 'Queensland' ? 'QLD' : datum.state =='Western Australia' ? 'WA' : datum.state == 'Northern Territory' ? 'NT' : datum.state=='South Australia' ? 'SA' : datum.state == 'Tasmania' ? 'TAS' : datum.state","as":"state"}
     ],
     "mark":"rect",
     "encoding": {
         "x":{
             "field":"state",
             "type": "nominal",
-            "axis":{"labelAngle":-45,"title":"State"}
+            "axis":{"labelAngle":0,"title":"State"}
         },
         "y":{
             "field":"simple_category",
@@ -28,13 +29,13 @@
             "field":"prop_of_pop",
             "type": "quantitative",
             "title":"Proportion of State Population (%)",
-            "scale":{"scheme":"blues"},
-            "legend":{"orient":"right"}
+            "scale":{"scheme":"greens"},
+            "legend":{"orient":"right","title":"% of Population"}
         },
         "tooltip":[
             {"field":"state","type": "nominal"},
-            {"field":"simple_category","type":"nominal"},
-            {"field":"prop_of_pop","type": "quantitative","format":".1f"}
+            {"field":"simple_category","type":"nominal", "title":"Language Category"},
+            {"field":"prop_of_pop","type": "quantitative","format":".2f","title": "% of Population"}
         ]
     },
     "config": {
