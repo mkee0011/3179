@@ -3,7 +3,10 @@
     "height":500,
     "width":600,
     "background":"white",
-    "title": "English Only Speakers in Australia (2021)",
+    "title": {
+        "text":"English Only Speakers in Australia (2021)",
+        "fontSize":16
+    },
     "params": [
         {
             "name": "zoom_level",
