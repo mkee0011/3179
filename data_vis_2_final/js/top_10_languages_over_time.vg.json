@@ -1,10 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height":432,
+    "height":420,
     "width":"container",
     "background":"white",
     "title": {
-        "text":"Change in the Number of Top 10 Non-English Language Speakers",
+        "text":["Number of the Top 10 Most Common Non-English","Language Speakers in Australia"],
         "fontSize":15
     },
     "description": "Slope chart showing the change in the number of speakers for languages per census year",
@@ -43,7 +43,22 @@
             "condition": {
                 "param": "selected_language",
                 "field": "Language",
-                "type": "nominal"
+                "type": "nominal",
+                "scale":{
+                    "domain":["Arabic","Cantonese","Greek","Hindi","Italian","Mandarin","Nepali","Punjabi","Spanish","Vietnamese"],
+                    "range":[
+                        "#a6cee3",
+                        "#1f78b4",
+                        "#b2df8a",
+                        "#33a02c",
+                        "#fb9a99",
+                        "#e31a1c",
+                        "#fdbf6f",
+                        "#ff7f00",
+                        "#cab2d6",
+                        "#6a3d9a"
+                    ]
+                }
             },
             "value": "lightgray"
         },

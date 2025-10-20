@@ -27,7 +27,7 @@
          <div class="pure-u-1-1">
             <h1>
                 Linguistic Diversity in Australia
-                <span class="subtext">An exploration into the different languages Autralian's speak at home through the 2021 Australian Census</span>
+                <span class="subtext">An exploration into the main languages spoken at home in Australia in 2021</span>
             </h1>
          </div>
     </div>
@@ -35,24 +35,23 @@
     <!-- Section Heading -->
     <div class="pure-g">
         <div class="pure-u-1-1" style="text-align: center;">
-        <h3>English Proficiency and Patterns</h3>
+        <h3>English As The Main Language Used At Home</h3>
         </div>
     </div>
     <!-- Section Content--> 
     <div class="chart-row">
-        <div class="chart-column" style="flex: 1; justify-content:center;">
+        <div class="chart-column" style="flex: 1; justify-content: center;">
             <h2> Who speaks English in Australia? </h2>
-            <p>While Australia does not have an official language, English is the unofficial recognised language of Australia. </p>
-            <p>In the 2021 Australia Census, the variable ENGLP (Proficiency in Spoken English) was recorded for individuals who reported speaking a language other than English at home.</p>
-            <p>👀 Explore the percentage of people in Australia who only speak English at home</p>
-        </div> 
-        <div class="chart-column" style="flex: 5;">
-            <div id="eng_lga_map" class="vis-container"></div>
+            <p>English is the most common langauge in Australia, but how many people speak English only at home?</p>
+            <p>👀 Explore the map to see the proportion of people in each Local Government Area who only speak English at home</p>
             <div class="annotation">
                 <div class="annotation-text">
-                    👆 Select a 'Map Centre' to view a specific state and take a closer look by changing the 'Zoom' slider!
+                    👉 Select a 'Map Centre' to view a specific state and take a closer look by changing the 'Zoom' slider!
                 </div>
             </div>
+        </div>
+        <div class="chart-column" style="flex: 5;">
+            <div id="eng_lga_map" class="vis-container"></div>
         </div> 
     </div>
     <div class="chart-row">
@@ -60,7 +59,7 @@
             <div id="fluency_dotplot" class="vis-container"></div>
             <div class="annotation">
                 <div class="annotation-text">
-                    👀 Explore the English Profciency Level of people in Australia who do not use English as their main language at home
+                    👀 Not everyone uses English as their main language at home. Explore how people who speak a non-English language at home rated their ability to speak English. 
                 </div>
             </div>
         </div> 
@@ -68,7 +67,7 @@
             <div id="diverging_bar" class="vis-container"></div>
             <div class="annotation">
                 <div class="annotation-text">
-                    👀 Compare the number of people who use English as their main language at home to those who don't by state
+                    👀 So not everyone uses English as their main language at home. Discover what percent of the population use a non-English language at home.  
                 </div>
             </div>
         </div> 
@@ -77,7 +76,7 @@
     <!-- Section Heading -->
     <div class="pure-g">
         <div class="pure-u-1-1" style="text-align: center;">
-        <h3>Broad Language Categories</h3>
+        <h3>Types Of Languges Used At Home</h3>
         </div>
     </div>
     <!-- Section Content -->
@@ -86,9 +85,14 @@
             <div id="heatmap" class="vis-container"></div>
         </div> 
         <div class="chart-column" style="flex: 1; justify-content: center;">
-            <h2> What type of languages do Australians speaks at home? </h2>
-            <p> The Census uses the vairable LANP (Language used at home) to identify the main language used at home</p>
-            <p> 👀 Explore the geographic areas where these languages originate from and who in Australia speaks them at home</p>
+            <h2> What type of languages do Australians speak at home? </h2>
+            <p> The 2021 Australian census revealed a wide variety of languages are used at home, reflecting the multi-cultural nature of Australia.</p>
+            <p> 👀 Explore how language groups from different parts of the world are disrtibuted across Australia.</p>
+            <div class="annotation">
+                <div class="annotation-text">
+                    👈 Hover over the heat map to explore the % of states that speak different language groups at home!
+                </div>
+            </div>
         </div>
     </div>
 
@@ -104,7 +108,7 @@
             <div id="top10_lollipop" class="vis-container"></div>
             <div class="annotation">
                 <div class="annotation-text">
-                The Top 10 Non-English Languages Spoken at Home in Australia according to the 2021 Census
+                    👀 The 10 most commmon Non-English languages spoken at home in Australia according to the 2021 Census.
                 </div>
             </div>
         </div>
@@ -112,7 +116,7 @@
             <div id="slope_chart" class="vis-container"></div>
             <div class="annotation">
                 <div class="annotation-text">
-                    👆 Select a 'Language' in the legend to highlight it's change over the years!
+                    👆 Select a 'Language' in the legend to highlight it's change in the number of speakers across census years!
                 </div>
             </div>
         </div>
@@ -121,15 +125,15 @@
         <div class="chart-column" style="flex: 1; justify-content: center;">
             <h2> How common are the Top 10 Non-English Languages acrosss Australia? </h2>
             <p> 👀 Explore what percentage of each state speak one of the Top 10 Non-English Languages! </p>
-            <p> 👀 Use the chart below to take a deeper dive into the number of speakers of each language, per state! </p>
+            <div class="annotation">
+                <div class="annotation-text">
+                    👉 Use the 'Language' selector to explore the proportion of speakers of different languages across Australia!
+                </div>
+            </div>
+            <p> 👀 Use the chart below to take a deeper dive into the number of speakers of each language per state! </p>
         </div> 
         <div class="chart-column" style="flex: 4;">
             <div id="lang_state_chloro" class="vis-container"></div>
-            <div class="annotation">
-                <div class="annotation-text">
-                👆 Use the 'Language' selector to explore the proportion of speakers of different languages across Australia!
-                </div>
-            </div>
         </div>
     </div>
     <div class="chart-row">
@@ -137,12 +141,7 @@
             <div id="stacked_bar" class="vis-container"></div>
             <div class="annotation">
                 <div class="annotation-text">
-                👆 Use the 'State' selector to explore the number of speakers of different languages in a specific state!
-                </div>
-            </div>
-            <div class="annotation">
-                <div class="annotation-text">
-                👆 Interested to see languages with a certain minmum amount of speakers? Use the 'Minimum Number of Speakers' slider to filter the languages shown!
+                👆 Use the 'State' selector to view a specific state and the 'Minimum Number of Speakers' slider to filter out languages with a low number of speakers!
                 </div>
             </div>
         </div>
@@ -152,10 +151,13 @@
     <div class="footer">
         <h6>Designed by Mickayla Kee</h6>
         <h6>Data from the 2021, 2016 and 2011 Australian census retrieved from abs.gov.au</h6>
-        <h6>Resources:</h6>
-        <h6>    https://www.abs.gov.au/census/about-census/delivering-2021-census/about-census</h6>
+        <h6>Data Sources:</h6>
         <h6>    https://digital.atlas.gov.au/datasets/52894f08317c47e9b54d3bb526f6dd8b_11/explore?location=-24.211629%2C132.406166%2C4.59</h6>
         <h6>    https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-ocean/</h6>
+        <h6>    https://www.abs.gov.au/statistics/microdata-tablebuilder/tablebuilder</h6>
+        <h6>Resources:</h6>
+        <h6>    https://www.abs.gov.au/census/about-census/delivering-2021-census/about-census</h6>
+        <h6>    https://www.abs.gov.au/census/guide-census-data/census-dictionary/2021/variables-topic/cultural-diversity/proficiency-spoken-english-englp</h6>
     </div>
 
 </div>

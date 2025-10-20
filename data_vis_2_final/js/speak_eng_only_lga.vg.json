@@ -4,7 +4,7 @@
     "width":"container",
     "background":"white",
     "title": {
-        "text":"English Only Speakers in Australia",
+        "text":"English Only Speakers in Australia by Local Government Area",
         "fontSize":16
     },
     "params": [
@@ -95,7 +95,7 @@
                 },
             "tooltip": [
                 {"field": "properties.LGA_NAME21", "type": "nominal", "title": "LGA"},
-                {"field": "prop_of_pop", "type": "quantitative", "format":".0f","title":"% of Population"}
+                {"field": "prop_of_pop", "type": "quantitative", "format":".0f","title":"% of LGA Population"}
                 ]
             }
         }
