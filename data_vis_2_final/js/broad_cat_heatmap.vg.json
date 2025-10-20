@@ -6,7 +6,7 @@
     "title":{
         "text":"Proportion of Population Speaking each Language Group by State*",
         "fontSize":15,
-        "subtitle": "*English has been exlucded from this chart"
+        "subtitle": "*English has been excluded from this chart"
     },
     "description": "Heat map showing the proportion of population that speak a language group at home by state",
     "data": {
