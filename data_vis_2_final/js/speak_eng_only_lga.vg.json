@@ -81,7 +81,7 @@
                 },
                 {"calculate": "datum.speaks_english_only/datum.pop * 100", "as": "prop_of_pop"}
             ],
-            "mark": {"type": "geoshape","stroke":"lightgray"},
+            "mark": {"type": "geoshape","stroke":"darkgray"},
             "encoding": {
                 "color": {
                     "field": "prop_of_pop",
